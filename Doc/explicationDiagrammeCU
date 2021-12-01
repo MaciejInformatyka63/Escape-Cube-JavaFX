@@ -1,0 +1,23 @@
+CAS D'UTILISATION :
+
+	Nom cas : déplacer Carré 
+	Acteur : Joueur
+	Scénario nominal :
+		1.Le joueur demande à déplacer le carré dans une direction
+		1.1-Le jeu déplace le carré en continu
+		2-Le carré arrive contre un mur ou un piston non activé
+		2.1-Le jeu arrête le mouvement du carré et rend la main au joueur
+	Scénario alternatif :
+		1.1-Le joueur est déjà contre un mur
+		1.2-Le jeu ne déplace pas le carré et rend directement la main au joueur
+		
+	------------------------------------------------------------------------------------------------------------------------------------
+	
+	Nom cas : Activer un piston
+	Cas inclus : déplacer carré
+	Scénario nominal :
+		1.Le joueur se trouve sur un piston non activé
+		1.1-Le jeu affiche la touche sur lequel le joueur doit appuyer
+		2.Le joueur appuie sur la touche
+		2.1-Le jeu active le piston et démare son chrono, et rend la main au joueur
+	
