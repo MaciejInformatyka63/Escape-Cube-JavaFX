@@ -7,10 +7,6 @@ public class CarreJoueur extends Element {
         return p;
     }
 
-    public void setP(Positions p) {
-        this.p = p;
-    }
-
     public CarreJoueur(Positions p) {
         this.p=p;
     }
