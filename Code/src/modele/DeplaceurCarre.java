@@ -4,8 +4,7 @@ public class DeplaceurCarre extends Deplaceur{
 
 
 
-    public void deplacer(Element cj,char d,int v, Collisionneur c) {
-        Positions posFinales = c.Collision(cj, d);
+    public void deplacer(Element cj,char d,int v, Positions posFinales) {
         ;
         switch (d) {
             case 'h':
