@@ -1,10 +1,9 @@
 package modele.gestion;
 
-import modele.gestion.Collisionneur;
-import modele.métier.Element;
-import modele.métier.Mur;
-import modele.métier.Niveau;
-import modele.métier.Positions;
+import modele.metier.Element;
+import modele.metier.Mur;
+import modele.metier.Niveau;
+import modele.metier.Positions;
 
 import java.util.Iterator;
 

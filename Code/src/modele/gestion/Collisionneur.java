@@ -1,8 +1,8 @@
 package modele.gestion;
 
-import modele.métier.Element;
-import modele.métier.Niveau;
-import modele.métier.Positions;
+import modele.metier.Element;
+import modele.metier.Niveau;
+import modele.metier.Positions;
 
 public abstract class Collisionneur {
 

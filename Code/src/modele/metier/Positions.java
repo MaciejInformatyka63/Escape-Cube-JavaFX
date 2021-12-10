@@ -1,4 +1,4 @@
-package modele.métier;
+package modele.metier;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ReadOnlyIntegerProperty;

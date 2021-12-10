@@ -1,4 +1,4 @@
-package modele.métier;
+package modele.metier;
 
 public abstract class Element {
 

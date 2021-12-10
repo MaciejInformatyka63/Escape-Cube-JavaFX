@@ -1,4 +1,4 @@
-package modele.métier;
+package modele.metier;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;

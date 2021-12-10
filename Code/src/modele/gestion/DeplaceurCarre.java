@@ -1,7 +1,7 @@
 package modele.gestion;
 
-import modele.métier.Element;
-import modele.métier.Positions;
+import modele.metier.Element;
+import modele.metier.Positions;
 
 public class DeplaceurCarre extends Deplaceur{
 

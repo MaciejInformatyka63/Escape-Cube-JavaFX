@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.shape.Rectangle;
 import modele.gestion.CollisionneurMur;
 import modele.gestion.DeplaceurCarre;
-import modele.métier.*;
+import modele.metier.*;
 
 
 public class Fenetre {
