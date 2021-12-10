@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Launcher extends Application {
     @Override
     public void start(Stage ps) throws Exception {
-        Parent r = FXMLLoader.load(getClass().getResource("/FXML/test.fxml"));
+        Parent r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
         Scene s = new Scene(r);
         ps.setScene(s);
         ps.show();

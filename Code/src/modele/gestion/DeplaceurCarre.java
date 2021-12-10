@@ -1,10 +1,13 @@
-package modele;
+package modele.gestion;
+
+import modele.métier.Element;
+import modele.métier.Positions;
 
 public class DeplaceurCarre extends Deplaceur{
 
 
 
-    public void deplacer(Element cj,char d,int v, Positions posFinales) {
+    public void deplacer(Element cj, char d, int v, Positions posFinales) {
         ;
         switch (d) {
             case 'h':
