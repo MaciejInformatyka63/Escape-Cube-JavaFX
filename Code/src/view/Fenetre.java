@@ -18,15 +18,18 @@ public class Fenetre {
 
     @FXML
     public void initialize() {
+        Sortie sortie = new Sortie();
+        Niveau niveau = new Niveau();
+        Monde monde = new Monde();
         Positions pcj= new Positions((int)carre.getX(), (int)(carre.getX()+ carre.getWidth()), (int)carre.getY(), (int)(carre.getY()+ carre.getHeight()));
         Positions pm = new Positions((int)mur.getX(), (int)(mur.getX()+ mur.getWidth()), (int)mur.getY(), (int)(mur.getY()+ mur.getHeight()));
         Positions posFin;
         CarreJoueur cj=new CarreJoueur(pcj);
-        Mur m = new Mur(pm);
+        MurConcret m = new MurConcret();
         DeplaceurCarre dc = new DeplaceurCarre();
         CollisionneurMur cm = new CollisionneurMur();
-        cm.addMur(m);
-        posFin=cm.Collision(cj,'d');
+        niveau.addMur(m);
+        posFin=cm.Collision(cj,'d',niveau);
         dc.deplacer(cj,'d',10,posFin);
         carre.setX((cj.getP().getPosx1()));
         carre.setY((cj.getP().getPosy1()));

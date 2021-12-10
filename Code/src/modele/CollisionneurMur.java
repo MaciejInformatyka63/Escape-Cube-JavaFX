@@ -6,16 +6,6 @@ import java.util.List;
 
 public class CollisionneurMur extends Collisionneur{
 
-    private List<Mur> lesMurs;
-
-    public CollisionneurMur() {
-        lesMurs=new ArrayList<>();
-    }
-
-    public void addMur (Mur m){
-        lesMurs.add(m);
-    }
-
     /*
     La variable changer permet de savoir la valeur par laquelle on doit changer la position
 
@@ -27,13 +17,13 @@ public class CollisionneurMur extends Collisionneur{
      */
 
     @Override
-    public Positions Collision(Element e, char d) {
+    public Positions Collision(Element e, char d, Niveau niv) {
         int changer;
         switch (d) {
 
             case 'h' :
                 changer=0;
-                for (Iterator<Mur> m = lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
                     if ((m.next().getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < m.next().getP().getPosx2())
                             || (m.next().getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > m.next().getP().getPosx1())) {
                         if (m.next().getP().getPosy2() > changer && m.next().getP().getPosy2() < e.getP().getPosy1()){
@@ -45,7 +35,7 @@ public class CollisionneurMur extends Collisionneur{
 
             case 'b' :
                 changer=0;
-                for (Iterator<Mur> m = lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
                     if ((m.next().getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < m.next().getP().getPosx2())
                             || (m.next().getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > m.next().getP().getPosx1())) {
                         if (m.next().getP().getPosy1() > changer && m.next().getP().getPosy1() > e.getP().getPosy2()){
@@ -57,7 +47,7 @@ public class CollisionneurMur extends Collisionneur{
 
             case 'g' :
                 changer=0;
-                for (Iterator<Mur> m = lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
                     if ((m.next().getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < m.next().getP().getPosy2())
                             || (m.next().getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > m.next().getP().getPosy1())) {
                         if (m.next().getP().getPosx2() > changer && m.next().getP().getPosx2() < e.getP().getPosx1()){
@@ -69,7 +59,7 @@ public class CollisionneurMur extends Collisionneur{
 
             case 'd' :
                 changer=0;
-                for (Iterator<Mur> m = lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
                     if ((m.next().getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < m.next().getP().getPosy2())
                             || (m.next().getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > m.next().getP().getPosy1())) {
                         if (m.next().getP().getPosx1() < changer && m.next().getP().getPosx1() > e.getP().getPosx2()){
