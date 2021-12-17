@@ -1,9 +1,6 @@
 package modele.gestion;
 
-import modele.metier.Element;
-import modele.metier.Mur;
-import modele.metier.Niveau;
-import modele.metier.Positions;
+import modele.metier.*;
 
 import java.util.Iterator;
 

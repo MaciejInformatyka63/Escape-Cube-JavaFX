@@ -3,12 +3,21 @@ package modele.gestion;
 import modele.metier.Element;
 import modele.metier.Positions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DeplaceurCarre extends Deplaceur{
 
+    public DeplaceurCarre() {
+        super.LesCollisionneurs = new ArrayList<>();
+    }
 
+    public void addCollMur (CollisionneurMur cm) {
+        super.LesCollisionneurs.add(cm);
+    }
 
     public void deplacer(Element cj, char d, int v, Positions posFinales) {
-        ;
+
         switch (d) {
             case 'h':
                 while (cj.getP().getPosy1() > posFinales.getPosy1()) {
