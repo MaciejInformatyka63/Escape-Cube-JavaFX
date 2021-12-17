@@ -22,11 +22,11 @@ public class Fenetre {
     public void initialize() {
         Niveau niveau = new Niveau();
         Monde monde = new Monde();
-        Positions pcj= new Positions(50, (int)(50+ carre.getWidth()), 50, (int)(50+ carre.getHeight()));
-        Positions pm = new Positions((int)mur.getX(), (int)(mur.getX()+ mur.getWidth()), (int)mur.getY(), (int)(mur.getY()+ mur.getHeight()));
+        Positions pcj= new Positions(100, (int)(100+ carre.getWidth()), 250, (int)(250+ carre.getHeight()));
+        Positions pm = new Positions((int)mur.getLayoutX(), (int)(mur.getLayoutX()+ mur.getWidth()), (int)mur.getLayoutY(), (int)(mur.getLayoutY()+ mur.getHeight()));
         Positions posFin, posM;
         List<Positions> lesPos = new ArrayList<Positions>();
-        CarreJoueur cj=new CarreJoueur(pcj, 50.0);
+        CarreJoueur cj=new CarreJoueur(pcj);
         MurConcret m = new MurConcret(pm);
         DeplaceurCarre dc = new DeplaceurCarre();
         CollisionneurMur cm = new CollisionneurMur();
@@ -39,9 +39,11 @@ public class Fenetre {
         carre.yProperty().bind(cj.getP().posy1Property());
         posM=cm.Collision(cj,'d',niveau);
         //posBtn
-        lesPos.add(posM);
+        //lesPos.add(posM);
         //lesPos.add(posBtn);
-        posFin = cpp.posPlusProche(cj.getP(),lesPos);
-        dc.deplacer(cj,'d',10,posFin);
+        //posFin = cpp.posPlusProche(cj.getP(),lesPos);
+        dc.deplacer(cj,'d',10,posM);
+        carre.xProperty().bind(cj.getP().posx1Property());
+        carre.yProperty().bind(cj.getP().posy1Property());
     }
 }
