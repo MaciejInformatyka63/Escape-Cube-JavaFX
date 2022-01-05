@@ -7,6 +7,7 @@ public class ChronoBoutonCourt extends ChronoBoutonLongueur{
     public void run() {
         try {
             sleep(60000);
+            beep();
         }
         catch (Exception e) {
 

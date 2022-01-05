@@ -20,7 +20,8 @@ public class Fenetre {
 
     @FXML
     public void initialize() {
-        Niveau niveau = new Niveau();
+
+        Niveau niveau = new Niveau(null);
         Monde monde = new Monde();
         Positions pcj= new Positions(100, (int)(100+ carre.getWidth()), 250, (int)(250+ carre.getHeight()));
         Positions pm = new Positions((int)mur.getLayoutX(), (int)(mur.getLayoutX()+ mur.getWidth()), (int)mur.getLayoutY(), (int)(mur.getLayoutY()+ mur.getHeight()));

@@ -16,36 +16,43 @@ public class DeplaceurCarre extends Deplaceur{
         super.LesCollisionneurs.add(cm);
     }
 
-    public void deplacer(Element cj, char d, int v, Positions posFinales) {
+    public boolean deplacer(Element cj, char d, int v, Positions posFinales) {
 
         switch (d) {
             case 'h':
-                while (cj.getP().getPosy1() > posFinales.getPosy1()) {
+                if (cj.getP().getPosy1() > posFinales.getPosy1()) {
                     cj.setP(new Positions(cj.getP().getPosx1(), cj.getP().getPosx2(), cj.getP().getPosy1() - v, cj.getP().getPosy2() - v));
+                    return true;
                 }
                 cj.setP(posFinales);
-                break;
+                return false;
 
             case 'b':
-                while (cj.getP().getPosy1() < posFinales.getPosy1()) {
+                if (cj.getP().getPosy1() < posFinales.getPosy1()) {
                     cj.setP(new Positions(cj.getP().getPosx1(), cj.getP().getPosx2(), cj.getP().getPosy1() + v, cj.getP().getPosy2() + v));
+                    return true;
                 }
                 cj.setP(posFinales);
-                break;
+                return false;
 
             case 'g':
-                while (cj.getP().getPosx1() > posFinales.getPosx1()) {
+                if (cj.getP().getPosx1() > posFinales.getPosx1()) {
                     cj.setP(new Positions(cj.getP().getPosx1() - v, cj.getP().getPosx2() - v, cj.getP().getPosy1(), cj.getP().getPosy2()));
+                    return true;
                 }
                 cj.setP(posFinales);
-                break;
+                return false;
 
             case 'd':
-                while (cj.getP().getPosx1() < posFinales.getPosx1()) {
+                if (cj.getP().getPosx1() < posFinales.getPosx1()) {
                     cj.setP(new Positions(cj.getP().getPosx1() + v, cj.getP().getPosx2() + v, cj.getP().getPosy1(), cj.getP().getPosy2()));
+                    return true;
                 }
                 cj.setP(posFinales);
-                break;
+                return false;
+
+            default:
+                return false;
         }
     }
 }

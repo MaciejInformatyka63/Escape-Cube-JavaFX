@@ -24,7 +24,7 @@ public class CollisionneurMur extends Collisionneur {
 
             case 'h' :
                 changer=0;
-                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext(); ){
+                for (Iterator<Mur> m = niv.getLesMurs().iterator(); m.hasNext(); ){
                     mur=m.next();
                     if ((mur.getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < mur.getP().getPosx2())
                             || (mur.getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > mur.getP().getPosx1())) {
@@ -37,7 +37,7 @@ public class CollisionneurMur extends Collisionneur {
 
             case 'b' :
                 changer=10000;
-                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.getLesMurs().iterator(); m.hasNext();){
                     mur=m.next();
                     if ((mur.getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < mur.getP().getPosx2())
                             || (mur.getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > mur.getP().getPosx1())) {
@@ -50,7 +50,7 @@ public class CollisionneurMur extends Collisionneur {
 
             case 'g' :
                 changer=0;
-                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.getLesMurs().iterator(); m.hasNext();){
                     mur=m.next();
                     if ((mur.getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < mur.getP().getPosy2())
                             || (mur.getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > mur.getP().getPosy1())) {
@@ -63,7 +63,7 @@ public class CollisionneurMur extends Collisionneur {
 
             case 'd' :
                 changer=100000;
-                for (Iterator<Mur> m = niv.lesMurs.iterator(); m.hasNext();){
+                for (Iterator<Mur> m = niv.getLesMurs().iterator(); m.hasNext();){
                     mur=m.next();
                     if ((mur.getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < mur.getP().getPosy2())
                             || (mur.getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > mur.getP().getPosy1())) {

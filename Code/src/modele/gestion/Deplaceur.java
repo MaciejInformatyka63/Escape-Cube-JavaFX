@@ -8,5 +8,5 @@ import java.util.List;
 public abstract class Deplaceur {
     public List<Collisionneur> LesCollisionneurs;
 
-    public abstract void deplacer(Element e, char d, int v, Positions posFinales);
+    public abstract boolean deplacer(Element e, char d, int v, Positions posFinales);
 }

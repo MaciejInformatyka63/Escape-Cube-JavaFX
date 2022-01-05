@@ -5,12 +5,13 @@ import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 
 public class Sortie extends Element{
-    private BooleanProperty ouvert = new SimpleBooleanProperty();
-    public boolean getOuvert() {return ouvert.get();}
-    public void setOuvert(boolean val) {ouvert.set(val);}
-    public ReadOnlyBooleanProperty ouvertProperty() {return ouvert;}
-
+    private boolean ouvert;
     public Sortie(Positions p){
         super(p);
+        ouvert=false;
     }
+
+
+    public boolean isOuvert() {return ouvert;}
+    public void setOuvert(boolean val) {ouvert=val;}
 }
