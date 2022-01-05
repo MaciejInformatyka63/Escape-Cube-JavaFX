@@ -43,7 +43,7 @@ public class Fenetre {
         //lesPos.add(posM);
         //lesPos.add(posBtn);
         //posFin = cpp.posPlusProche(cj.getP(),lesPos);
-        dc.deplacer(cj,'d',10,posM);
+        dc.deplacer();
         carre.xProperty().bind(cj.getP().posx1Property());
         carre.yProperty().bind(cj.getP().posy1Property());
     }

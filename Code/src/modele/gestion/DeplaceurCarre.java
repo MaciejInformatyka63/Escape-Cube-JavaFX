@@ -16,39 +16,39 @@ public class DeplaceurCarre extends Deplaceur{
         super.LesCollisionneurs.add(cm);
     }
 
-    public boolean deplacer(Element cj, char d, int v, Positions posFinales) {
+    public boolean deplacer() {
 
         switch (d) {
             case 'h':
-                if (cj.getP().getPosy1() > posFinales.getPosy1()) {
-                    cj.setP(new Positions(cj.getP().getPosx1(), cj.getP().getPosx2(), cj.getP().getPosy1() - v, cj.getP().getPosy2() - v));
+                if (e.getP().getPosy1() > posFinales.getPosy1()) {
+                    e.setP(new Positions(e.getP().getPosx1(), e.getP().getPosx2(), e.getP().getPosy1() - v, e.getP().getPosy2() - v));
                     return true;
                 }
-                cj.setP(posFinales);
+                e.setP(posFinales);
                 return false;
 
             case 'b':
-                if (cj.getP().getPosy1() < posFinales.getPosy1()) {
-                    cj.setP(new Positions(cj.getP().getPosx1(), cj.getP().getPosx2(), cj.getP().getPosy1() + v, cj.getP().getPosy2() + v));
+                if (e.getP().getPosy1() < posFinales.getPosy1()) {
+                    e.setP(new Positions(e.getP().getPosx1(), e.getP().getPosx2(), e.getP().getPosy1() + v, e.getP().getPosy2() + v));
                     return true;
                 }
-                cj.setP(posFinales);
+                e.setP(posFinales);
                 return false;
 
             case 'g':
-                if (cj.getP().getPosx1() > posFinales.getPosx1()) {
-                    cj.setP(new Positions(cj.getP().getPosx1() - v, cj.getP().getPosx2() - v, cj.getP().getPosy1(), cj.getP().getPosy2()));
+                if (e.getP().getPosx1() > posFinales.getPosx1()) {
+                    e.setP(new Positions(e.getP().getPosx1() - v, e.getP().getPosx2() - v, e.getP().getPosy1(), e.getP().getPosy2()));
                     return true;
                 }
-                cj.setP(posFinales);
+                e.setP(posFinales);
                 return false;
 
             case 'd':
-                if (cj.getP().getPosx1() < posFinales.getPosx1()) {
-                    cj.setP(new Positions(cj.getP().getPosx1() + v, cj.getP().getPosx2() + v, cj.getP().getPosy1(), cj.getP().getPosy2()));
+                if (e.getP().getPosx1() < posFinales.getPosx1()) {
+                    e.setP(new Positions(e.getP().getPosx1() + v, e.getP().getPosx2() + v, e.getP().getPosy1(), e.getP().getPosy2()));
                     return true;
                 }
-                cj.setP(posFinales);
+                e.setP(posFinales);
                 return false;
 
             default:
