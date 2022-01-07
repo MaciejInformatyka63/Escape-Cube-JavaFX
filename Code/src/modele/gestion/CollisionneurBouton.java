@@ -1,8 +1,9 @@
 package modele.gestion;
 
-import modele.metier.*;
-
-import java.util.Iterator;
+import modele.metier.Bouton;
+import modele.metier.Element;
+import modele.metier.Niveau;
+import modele.metier.Positions;
 
 public class CollisionneurBouton extends Collisionneur{
 
@@ -12,38 +13,38 @@ public class CollisionneurBouton extends Collisionneur{
         Positions posfin= e.getP();
         switch (d) {
             case 'h' :
-                for (Iterator<Bouton> m = niv.getLesBoutons().iterator(); m.hasNext(); ) {
-                    b = m.next();
-                    if (e.getP().getPosx1()==b.getP().getPosx1() && e.getP().getPosy1()>b.getP().getPosy1()) {
-                        posfin=b.getP();
+                for (Bouton bouton : niv.getLesBoutons()) {
+                    b = bouton;
+                    if (e.getP().getPosx1() == b.getP().getPosx1() && e.getP().getPosy1() > b.getP().getPosy1()) {
+                        posfin = b.getP();
                     }
                 }
                 break;
 
             case 'b' :
-                for (Iterator<Bouton> m = niv.getLesBoutons().iterator(); m.hasNext(); ) {
-                    b = m.next();
-                    if (e.getP().getPosx1()==b.getP().getPosx1() && e.getP().getPosy1()<b.getP().getPosy1()) {
-                        posfin=b.getP();
+                for (Bouton bouton : niv.getLesBoutons()) {
+                    b = bouton;
+                    if (e.getP().getPosx1() == b.getP().getPosx1() && e.getP().getPosy1() < b.getP().getPosy1()) {
+                        posfin = b.getP();
                     }
                 }
                 break;
 
             case 'g' :
-                for (Iterator<Bouton> m = niv.getLesBoutons().iterator(); m.hasNext(); ) {
-                    b = m.next();
-                    if (e.getP().getPosy1()==b.getP().getPosy1() && e.getP().getPosx1()>b.getP().getPosx1()) {
-                        posfin=b.getP();
+                for (Bouton bouton : niv.getLesBoutons()) {
+                    b = bouton;
+                    if (e.getP().getPosy1() == b.getP().getPosy1() && e.getP().getPosx1() > b.getP().getPosx1()) {
+                        posfin = b.getP();
                     }
                 }
                 break;
 
             case 'd' :
 
-                for (Iterator<Bouton> m = niv.getLesBoutons().iterator(); m.hasNext(); ) {
-                    b = m.next();
-                    if (e.getP().getPosy1()==b.getP().getPosy1() && e.getP().getPosx1()<b.getP().getPosx1()) {
-                        posfin=b.getP();
+                for (Bouton bouton : niv.getLesBoutons()) {
+                    b = bouton;
+                    if (e.getP().getPosy1() == b.getP().getPosy1() && e.getP().getPosx1() < b.getP().getPosx1()) {
+                        posfin = b.getP();
                     }
                 }
                 break;

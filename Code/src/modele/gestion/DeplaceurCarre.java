@@ -1,60 +1,50 @@
 package modele.gestion;
 
-import modele.metier.Element;
 import modele.metier.Positions;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DeplaceurCarre extends Deplaceur{
 
-    public DeplaceurCarre() {
-        super.LesCollisionneurs = new ArrayList<>();
-    }
-
-    public void addCollMur (CollisionneurMur cm) {
-        super.LesCollisionneurs.add(cm);
-    }
-
-    public void addCollBtn (CollisionneurBouton cb) {
-        super.LesCollisionneurs.add(cb);
-    }
-
     public boolean deplacer() {
 
-        switch (d) {
+        switch (super.getD()) {
             case 'h':
-                if (e.getP().getPosy1() > posFinales.getPosy1()) {
-                    e.setP(new Positions(e.getP().getPosx1(), e.getP().getPosx2(), e.getP().getPosy1() - v, e.getP().getPosy2() - v));
+                if (super.getE().getP().getPosy1() > super.getPosFinales().getPosy1()) {
+                    super.getE().setP(new Positions(super.getE().getP().getPosx1(), super.getE().getP().getPosx2(), super.getE().getP().getPosy1() - super.getV(), super.getE().getP().getPosy2() - super.getV()));
                     return true;
                 }
-                e.setP(posFinales);
-                return false;
-
+                else {
+                    super.getE().setP(getPosFinales());
+                    return false;
+                }
             case 'b':
-                if (e.getP().getPosy1() < posFinales.getPosy1()) {
-                    e.setP(new Positions(e.getP().getPosx1(), e.getP().getPosx2(), e.getP().getPosy1() + v, e.getP().getPosy2() + v));
+                if (super.getE().getP().getPosy1() < getPosFinales().getPosy1()) {
+                    super.getE().setP(new Positions(super.getE().getP().getPosx1(), super.getE().getP().getPosx2(), super.getE().getP().getPosy1() + super.getV(), super.getE().getP().getPosy2() + super.getV()));
                     return true;
                 }
-                e.setP(posFinales);
-                return false;
-
+                else {
+                    super.getE().setP(getPosFinales());
+                    return false;
+                }
             case 'g':
-                if (e.getP().getPosx1() > posFinales.getPosx1()) {
-                    e.setP(new Positions(e.getP().getPosx1() - v, e.getP().getPosx2() - v, e.getP().getPosy1(), e.getP().getPosy2()));
+                if (super.getE().getP().getPosx1() > getPosFinales().getPosx1()) {
+                    super.getE().setP(new Positions(super.getE().getP().getPosx1() - super.getV(), super.getE().getP().getPosx2() - super.getV(), super.getE().getP().getPosy1(), super.getE().getP().getPosy2()));
                     return true;
                 }
-                e.setP(posFinales);
-                return false;
-
+                else {
+                    super.getE().setP(getPosFinales());
+                    return false;
+                }
             case 'd':
-                if (e.getP().getPosx1() < posFinales.getPosx1()) {
-                    e.setP(new Positions(e.getP().getPosx1() + v, e.getP().getPosx2() + v, e.getP().getPosy1(), e.getP().getPosy2()));
+                if (super.getE().getP().getPosx1() < getPosFinales().getPosx1()) {
+                    super.getE().setP(new Positions(super.getE().getP().getPosx1() + super.getV(), super.getE().getP().getPosx2() + super.getV(), super.getE().getP().getPosy1(), super.getE().getP().getPosy2()));
                     return true;
                 }
-                e.setP(posFinales);
-                return false;
-
+                else {
+                    super.getE().setP(getPosFinales());
+                    return false;
+                }
             default:
                 return false;
         }

@@ -1,8 +1,9 @@
 package modele.gestion;
 
-import modele.metier.*;
-
-import java.util.Iterator;
+import modele.metier.Bouton;
+import modele.metier.Element;
+import modele.metier.Niveau;
+import modele.metier.Sortie;
 
 public class GestionSortieConcrete extends GestionSortie{
 
@@ -43,9 +44,11 @@ public class GestionSortieConcrete extends GestionSortie{
     @Override
     public void ouvrirSortie(Niveau n) {
         boolean bo = true;
-        for (Iterator<Bouton> b = n.getLesBoutons().iterator(); b.hasNext();){
-            if (b.next().isAppuyé()==false)
-                bo=false;
+        for (Bouton bouton : n.getLesBoutons()) {
+            if (!bouton.isAppuye()) {
+                bo = false;
+                break;
+            }
         }
         n.getSortie().setOuvert(true);
     }

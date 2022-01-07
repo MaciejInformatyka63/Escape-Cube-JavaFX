@@ -3,25 +3,24 @@ package modele.metier;
 import modele.gestion.ObsAppuye;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public abstract class Bouton extends Element{
-    private boolean appuyé;
+    private boolean appuye;
     private List<ObsAppuye> lesObservateurs;
 
-    public boolean isAppuyé() {
-        return appuyé;
+    public boolean isAppuye() {
+        return appuye;
     }
 
-    public void setAppuyé(boolean appuyé) {
-        this.appuyé = appuyé;
+    public void setAppuye(boolean appuye) {
+        this.appuye = appuye;
     }
 
-    public Bouton(Positions pos, boolean appuyé) {
+    public Bouton(Positions pos, boolean appuye) {
         super(pos);
         lesObservateurs=new ArrayList<>();
-        this.appuyé = appuyé;
+        this.appuye = appuye;
     }
 
     public void attacher(ObsAppuye o){
@@ -33,8 +32,8 @@ public abstract class Bouton extends Element{
     }
 
     public void notifier(){
-        for (Iterator<ObsAppuye> o = lesObservateurs.iterator() ; o.hasNext();) {
-            o.next().updatebouton();
+        for (ObsAppuye lesObservateur : lesObservateurs) {
+            lesObservateur.updatebouton();
         }
     }
 }

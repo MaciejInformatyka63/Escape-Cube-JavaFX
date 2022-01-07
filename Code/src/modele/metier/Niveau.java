@@ -12,10 +12,9 @@ public class Niveau {
     private List<Bouton> lesBoutons;
     private Sortie sortie;
 
-    public Niveau(Sortie sortie) {
+    public Niveau() {
         lesMurs=new ArrayList<>();
         lesBoutons=new ArrayList<>();
-        this.sortie=sortie;
     }
 
     public Sortie getSortie() {return sortie;}

@@ -8,6 +8,6 @@ public class ObsTempsBoutonConcret extends ObsTempsBouton{
 
     @Override
     public void updatechrono() {
-        boutonSujet.setAppuyé(false);
+        boutonSujet.setAppuye(false);
     }
 }

@@ -1,26 +1,23 @@
 package modele.gestion;
 
+import modele.chronos.Chrono;
 import modele.chronos.ChronoRefresh;
 import modele.metier.Element;
 import modele.metier.Positions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Deplaceur {
-    public List<Collisionneur> LesCollisionneurs;
+
+    private Element e;
+    private char d;
+    private int v;
+    private Positions posFinales;
+
 
     public Element getE() {
         return e;
-    }
-
-    private ChronoRefresh chronoR;
-
-    public ChronoRefresh getChronoR() {
-        return chronoR;
-    }
-
-    public void setChronoR(ChronoRefresh chronoR) {
-        this.chronoR = chronoR;
     }
 
     public void setE(Element e) {
@@ -51,11 +48,13 @@ public abstract class Deplaceur {
         this.posFinales = posFinales;
     }
 
-    protected Element e;
-    protected char d;
-    protected int v;
-    protected Positions posFinales;
+    public void detacherChrono(ChronoRefresh chrono) {
+        chrono.delDeplaceur(this);
+    }
 
+    public void attacherChrono(ChronoRefresh chrono) {
+        chrono.addDeplaceur(this);
+    }
 
     public abstract boolean deplacer();
 }

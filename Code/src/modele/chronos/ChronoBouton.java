@@ -1,17 +1,22 @@
 package modele.chronos;
 
+import javafx.application.Platform;
 import modele.gestion.ObsTempsBouton;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ChronoBouton extends Chrono{
     private List<ObsTempsBouton> lesObservateurs;
 
+    public ChronoBouton(){
+        lesObservateurs=new ArrayList<>();
+    }
+
     @Override
     public void beep() {
-        for (Iterator<ObsTempsBouton> o = lesObservateurs.iterator(); o.hasNext();) {
-            o.next().updatechrono();
+        for (ObsTempsBouton lesObservateur : lesObservateurs) {
+            Platform.runLater(lesObservateur::updatechrono);
         }
     }
 

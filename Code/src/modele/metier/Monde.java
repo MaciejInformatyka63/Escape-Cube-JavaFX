@@ -13,4 +13,5 @@ public class Monde {
     public void addNiveau (Niveau n){
         lesNiveaux.add(n);
     }
+    public List<Niveau> getLesNiveaux(){return lesNiveaux;}
 }
