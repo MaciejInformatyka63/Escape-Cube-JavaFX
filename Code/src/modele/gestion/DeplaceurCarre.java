@@ -16,6 +16,10 @@ public class DeplaceurCarre extends Deplaceur{
         super.LesCollisionneurs.add(cm);
     }
 
+    public void addCollBtn (CollisionneurBouton cb) {
+        super.LesCollisionneurs.add(cb);
+    }
+
     public boolean deplacer() {
 
         switch (d) {

@@ -1,5 +1,6 @@
 package modele.gestion;
 
+import modele.chronos.ChronoRefresh;
 import modele.metier.Element;
 import modele.metier.Positions;
 
@@ -10,6 +11,16 @@ public abstract class Deplaceur {
 
     public Element getE() {
         return e;
+    }
+
+    private ChronoRefresh chronoR;
+
+    public ChronoRefresh getChronoR() {
+        return chronoR;
+    }
+
+    public void setChronoR(ChronoRefresh chronoR) {
+        this.chronoR = chronoR;
     }
 
     public void setE(Element e) {
