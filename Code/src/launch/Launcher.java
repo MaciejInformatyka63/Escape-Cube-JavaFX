@@ -1,21 +1,25 @@
 package launch;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.*;
-import javafx.scene.control.ToolBar;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import modele.gestion.Manager;
+import view.gestion.ManagerVue;
 
 public class Launcher extends Application {
+    private static Manager m;
+    private static ManagerVue mv;
+
     @Override
     public void start(Stage ps) throws Exception {
-        Parent r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
-        Scene s = new Scene(r);
-        ps.setScene(s);
-        ps.show();
-        //Manager m = new Manager();
+
+        mv = new ManagerVue(ps);
+        //m = new Manager();
     }
+
+    public static Manager getM(){
+        return m;
+    }
+
+    public static ManagerVue getMv(){return mv;}
 
 }

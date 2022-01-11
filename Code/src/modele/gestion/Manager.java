@@ -3,14 +3,18 @@ import modele.chronos.ChronoRefresh;
 import modele.chronos.ChronoRefreshConcret;
 import modele.metier.*;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Manager {
     private Monde monde;
     private Niveau niveauEnCours;
     private int indiceNiveauEnCours;
     int vitesse;
+    private KeyEvent toucheAppuiBouton;
+    private Map<KeyEvent,Character> touchesDeplacement;
     private DeplaceurCarre deplaceur;
     private List<Collisionneur> lesCollisionneurs;
     private Positions posFin;
@@ -50,16 +54,17 @@ public class Manager {
 
     }
 
-    public void traiterTouche() {
+    public void traiterTouche(KeyEvent e){
         List<Positions> lesPos = new ArrayList<>();
-        if(/*La touche est une touche de mouvement &&*/!mvmtEnCours) {
+        if(touchesDeplacement.containsKey(e) && !mvmtEnCours) {
+            char d = touchesDeplacement.get(e);
             mvmtEnCours=true;
             for (Collisionneur col : lesCollisionneurs) {
-                lesPos.add(col.Collision(niveauEnCours.getCarreJoueur(), 'h'/*A remplacer par la direction correspondant à la touche*/, niveauEnCours));
+                lesPos.add(col.Collision(niveauEnCours.getCarreJoueur(), d, niveauEnCours));
             }
-            posFin = cpp.posPlusProche(niveauEnCours.getCarreJoueur().getP(), lesPos);
+            posFin = cpp.posPlusProche(lesPos,d);
             deplaceur.setE(niveauEnCours.getCarreJoueur());
-            deplaceur.setD('h');
+            deplaceur.setD(d);
             deplaceur.setPosFinales(posFin);
             deplaceur.setV(vitesse);
             deplaceur.attacherChrono(chronoRefresh);

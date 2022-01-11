@@ -56,5 +56,5 @@ public abstract class Deplaceur {
         chrono.addDeplaceur(this);
     }
 
-    public abstract boolean deplacer();
+    public abstract void deplacer();
 }
