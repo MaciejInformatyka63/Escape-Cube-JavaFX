@@ -33,18 +33,18 @@ public class Fenetre {
         CollisionneurMur cm = new CollisionneurMur();
         ComparateurPos cpp = new ComparateurPos();
 
-        dc.addCollMur(cm);
         niveau.addMur(m);
 
-        carre.xProperty().bind(cj.getP().posx1Property());
-        carre.yProperty().bind(cj.getP().posy1Property());
+        //carre.xProperty().bind(cj.getP().posx1Property());
+        //carre.yProperty().bind(cj.getP().posy1Property());
         posM=cm.Collision(cj,'d',niveau);
         //posBtn
         //lesPos.add(posM);
         //lesPos.add(posBtn);
         //posFin = cpp.posPlusProche(cj.getP(),lesPos);
         dc.deplacer();
-        carre.xProperty().bind(cj.getP().posx1Property());
-        carre.yProperty().bind(cj.getP().posy1Property());
+        //carre.xProperty().bind(cj.getP().posx1Property());
+        //carre.yProperty().bind(cj.getP().posy1Property());
     }
+
 }

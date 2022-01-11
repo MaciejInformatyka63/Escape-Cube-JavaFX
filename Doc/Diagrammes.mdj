@@ -12246,14 +12246,6 @@
 				},
 				{
 					"_type": "UMLClass",
-					"_id": "AAAAAAF9dWixv78t33M=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class1"
-				},
-				{
-					"_type": "UMLClass",
 					"_id": "AAAAAAF9dWkeQb/SkQQ=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
@@ -12328,35 +12320,6 @@
 									"$ref": "AAAAAAF9dXWdecvXcus="
 								},
 								"aggregation": "composite"
-							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9mXMThNXEZR0=",
-							"_parent": {
-								"$ref": "AAAAAAF9dWkeQb/SkQQ="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXMThNXF4YI=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXMThNXEZR0="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9dWkeQb/SkQQ="
-								},
-								"navigable": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXMThNXGnas=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXMThNXEZR0="
-								},
-								"name": "médiateur",
-								"reference": {
-									"$ref": "AAAAAAF9mXKbMNIvXoI="
-								}
 							}
 						}
 					],
@@ -13105,35 +13068,6 @@
 									"$ref": "AAAAAAF9mWs7PYaeiU0="
 								}
 							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9mXBs9sQ/pAM=",
-							"_parent": {
-								"$ref": "AAAAAAF9dY1vHtuZlis="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXBs9sRAL7M=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXBs9sQ/pAM="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9dY1vHtuZlis="
-								},
-								"navigable": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXBs9sRBxfU=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXBs9sQ/pAM="
-								},
-								"name": "médiaBouton",
-								"reference": {
-									"$ref": "AAAAAAF9mWuQdohTqDU="
-								}
-							}
 						}
 					],
 					"operations": [
@@ -13190,14 +13124,6 @@
 							]
 						}
 					]
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAF9dY5g8tweoOY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class2"
 				},
 				{
 					"_type": "UMLClass",
@@ -13280,36 +13206,6 @@
 							},
 							"target": {
 								"$ref": "AAAAAAF9dWTGQ77jPz4="
-							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9mW1dVKgGnmQ=",
-							"_parent": {
-								"$ref": "AAAAAAF9mWs7PYaeiU0="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mW1dVKgHEgg=",
-								"_parent": {
-									"$ref": "AAAAAAF9mW1dVKgGnmQ="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9mWs7PYaeiU0="
-								},
-								"navigable": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mW1dVKgIOM4=",
-								"_parent": {
-									"$ref": "AAAAAAF9mW1dVKgGnmQ="
-								},
-								"name": "médiateur",
-								"reference": {
-									"$ref": "AAAAAAF9mWuQdohTqDU="
-								},
-								"multiplicity": "1"
 							}
 						},
 						{
@@ -13407,68 +13303,6 @@
 				},
 				{
 					"_type": "UMLClass",
-					"_id": "AAAAAAF9mWuQdohTqDU=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "MediateurBouton",
-					"isAbstract": true
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAF9mW2Oa6nImn0=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "MédiateurBoutonConcret",
-					"ownedElements": [
-						{
-							"_type": "UMLGeneralization",
-							"_id": "AAAAAAF9mW27Nqqmx0M=",
-							"_parent": {
-								"$ref": "AAAAAAF9mW2Oa6nImn0="
-							},
-							"source": {
-								"$ref": "AAAAAAF9mW2Oa6nImn0="
-							},
-							"target": {
-								"$ref": "AAAAAAF9mWuQdohTqDU="
-							}
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9mW32MqsRJmY=",
-							"_parent": {
-								"$ref": "AAAAAAF9mW2Oa6nImn0="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mW32MqsSSmQ=",
-								"_parent": {
-									"$ref": "AAAAAAF9mW32MqsRJmY="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9mW2Oa6nImn0="
-								},
-								"navigable": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mW32MqsT/Tw=",
-								"_parent": {
-									"$ref": "AAAAAAF9mW32MqsRJmY="
-								},
-								"name": "lesBoutons",
-								"reference": {
-									"$ref": "AAAAAAF9dZI8ZOElQoA="
-								},
-								"multiplicity": "*"
-							}
-						}
-					]
-				},
-				{
-					"_type": "UMLClass",
 					"_id": "AAAAAAF9mXJxw9D2kmY=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
@@ -13486,65 +13320,6 @@
 							},
 							"target": {
 								"$ref": "AAAAAAF9dWkeQb/SkQQ="
-							}
-						}
-					]
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAF9mXKbMNIvXoI=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "MédiateurMur"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAF9mXK7/9NEv/s=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "MédiateurMurConcret",
-					"ownedElements": [
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAF9mXM6H9ZhGSQ=",
-							"_parent": {
-								"$ref": "AAAAAAF9mXK7/9NEv/s="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXM6H9ZiqVg=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXM6H9ZhGSQ="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9mXK7/9NEv/s="
-								},
-								"navigable": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAF9mXM6H9Zjlrg=",
-								"_parent": {
-									"$ref": "AAAAAAF9mXM6H9ZhGSQ="
-								},
-								"reference": {
-									"$ref": "AAAAAAF9mXJxw9D2kmY="
-								}
-							}
-						},
-						{
-							"_type": "UMLGeneralization",
-							"_id": "AAAAAAF9mXNNz9cNb6I=",
-							"_parent": {
-								"$ref": "AAAAAAF9mXK7/9NEv/s="
-							},
-							"source": {
-								"$ref": "AAAAAAF9mXK7/9NEv/s="
-							},
-							"target": {
-								"$ref": "AAAAAAF9mXKbMNIvXoI="
 							}
 						}
 					]

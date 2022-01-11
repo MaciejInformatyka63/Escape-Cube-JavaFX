@@ -11,6 +11,7 @@ public class Niveau {
     private List<Mur> lesMurs;
     private List<Bouton> lesBoutons;
     private Sortie sortie;
+    private CarreJoueur carreJoueur;
 
     public Niveau() {
         lesMurs=new ArrayList<>();
@@ -27,4 +28,8 @@ public class Niveau {
 
     public void addBouton (Bouton b) {lesBoutons.add(b);}
     public List<Bouton> getLesBoutons () {return lesBoutons;}
+
+    public CarreJoueur getCarreJoueur() {return carreJoueur;}
+    public void setCarreJoueur(CarreJoueur carreJoueur) {this.carreJoueur = carreJoueur;}
+
 }

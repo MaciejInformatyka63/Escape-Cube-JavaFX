@@ -6,6 +6,7 @@ import javafx.scene.*;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import modele.gestion.Manager;
 
 public class Launcher extends Application {
     @Override
@@ -14,9 +15,7 @@ public class Launcher extends Application {
         Scene s = new Scene(r);
         ps.setScene(s);
         ps.show();
-        BorderPane bp = new BorderPane();
-        ToolBar tl = new ToolBar();
-        bp.setTop(tl);
+        //Manager m = new Manager();
     }
 
 }

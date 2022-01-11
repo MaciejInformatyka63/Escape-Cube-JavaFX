@@ -8,13 +8,10 @@ import java.util.List;
 
 public class Manager {
     private Monde monde;
-    Niveau niveauEnCours;
+    private Niveau niveauEnCours;
     private int indiceNiveauEnCours;
-    private Sortie sortie;
-    private CarreJoueur cj;
+    int vitesse;
     private DeplaceurCarre deplaceur;
-    private CollisionneurMur colM;
-    private CollisionneurBouton colB;
     private List<Collisionneur> lesCollisionneurs;
     private Positions posFin;
     private ComparateurPos cpp;
@@ -24,10 +21,11 @@ public class Manager {
     private ChronoRefresh chronoRefresh;
 
     public Manager(){
-
+        vitesse = 10;
         mvmtEnCours=false;
-        Monde m =loadmonde();
-        startJeu(m);
+        lesCollisionneurs = new ArrayList<>();
+        monde =loadmonde();
+        startJeu(monde);
     }
 
     public Monde loadmonde(){
@@ -39,12 +37,10 @@ public class Manager {
         Thread t = new Thread (chronoRefresh);
         t.start();
         deplaceur = new DeplaceurCarre();
-        colM = new CollisionneurMur();
-        colB = new CollisionneurBouton();
         cpp = new ComparateurPos();
         gsc = new GestionSortieConcrete();
-        lesCollisionneurs.add(colM);
-        lesCollisionneurs.add(colB);
+        lesCollisionneurs.add(new CollisionneurMur());
+        lesCollisionneurs.add(new CollisionneurBouton());
         indiceNiveauEnCours =0;
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
         startNiveau(niveauEnCours);
@@ -59,12 +55,13 @@ public class Manager {
         if(/*La touche est une touche de mouvement &&*/!mvmtEnCours) {
             mvmtEnCours=true;
             for (Collisionneur col : lesCollisionneurs) {
-                lesPos.add(col.Collision(cj, 'h'/*A remplacer par la direction correspondant à la touche*/, niveauEnCours));
+                lesPos.add(col.Collision(niveauEnCours.getCarreJoueur(), 'h'/*A remplacer par la direction correspondant à la touche*/, niveauEnCours));
             }
-            posFin = cpp.posPlusProche(cj.getP(), lesPos);
-            deplaceur.setE(cj);
+            posFin = cpp.posPlusProche(niveauEnCours.getCarreJoueur().getP(), lesPos);
+            deplaceur.setE(niveauEnCours.getCarreJoueur());
             deplaceur.setD('h');
             deplaceur.setPosFinales(posFin);
+            deplaceur.setV(vitesse);
             deplaceur.attacherChrono(chronoRefresh);
             deplaceur.deplacer();
         }
@@ -73,7 +70,7 @@ public class Manager {
     public void finMouvement(){
         mvmtEnCours=false;
         gsc.ouvrirSortie(niveauEnCours);
-        if(gsc.sortieElem(niveauEnCours, cj, 'h'/*A remplacer par la direction correspondant à la touche*/)) {
+        if(gsc.sortieElem(niveauEnCours, niveauEnCours.getCarreJoueur(), 'h'/*A remplacer par la direction correspondant à la touche*/)) {
             indiceNiveauEnCours=indiceNiveauEnCours+1;
             startNiveau(monde.getLesNiveaux().get(indiceNiveauEnCours));
         }
