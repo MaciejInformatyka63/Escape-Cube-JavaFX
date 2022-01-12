@@ -1,4 +1,7 @@
 package modele.gestion;
+import data.Chargeur;
+import data.Stub;
+import javafx.scene.input.KeyCode;
 import modele.chronos.ChronoRefresh;
 import modele.chronos.ChronoRefreshConcret;
 import modele.metier.*;
@@ -7,14 +10,15 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Manager {
     private Monde monde;
     private Niveau niveauEnCours;
     private int indiceNiveauEnCours;
     int vitesse;
-    private KeyEvent toucheAppuiBouton;
-    private Map<KeyEvent,Character> touchesDeplacement;
+    private KeyCode toucheAppuiBouton;
+    private Map<KeyCode,Character> touchesDeplacement;
     private DeplaceurCarre deplaceur;
     private List<Collisionneur> lesCollisionneurs;
     private Positions posFin;
@@ -28,12 +32,19 @@ public class Manager {
         vitesse = 10;
         mvmtEnCours=false;
         lesCollisionneurs = new ArrayList<>();
+        touchesDeplacement = new TreeMap<>();
+        touchesDeplacement.put(KeyCode.Z,'h');
+        touchesDeplacement.put(KeyCode.Q,'g');
+        touchesDeplacement.put(KeyCode.S,'b');
+        touchesDeplacement.put(KeyCode.D,'d');
+        toucheAppuiBouton=KeyCode.SPACE;
         monde =loadmonde();
         startJeu(monde);
     }
 
     public Monde loadmonde(){
-        return new Monde();
+        Chargeur c = new Stub();
+        return c.loadMonde();
     }
 
     public void startJeu(Monde m) {
@@ -54,7 +65,7 @@ public class Manager {
 
     }
 
-    public void traiterTouche(KeyEvent e){
+    public void traiterTouche(KeyCode e){
         List<Positions> lesPos = new ArrayList<>();
         if(touchesDeplacement.containsKey(e) && !mvmtEnCours) {
             char d = touchesDeplacement.get(e);
@@ -69,6 +80,9 @@ public class Manager {
             deplaceur.setV(vitesse);
             deplaceur.attacherChrono(chronoRefresh);
             deplaceur.deplacer();
+        }
+        else if (e.equals(toucheAppuiBouton)) {
+
         }
     }
 

@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import launch.Launcher;
+import view.gestion.ManagerVue;
 
 public class FenetreStart {
 
@@ -19,7 +20,6 @@ public class FenetreStart {
 
     @FXML
     protected EventHandler quitter(){
-        Launcher.getMv().quitterJeu();
         return null;
     }
 

@@ -50,6 +50,6 @@ public class GestionSortieConcrete extends GestionSortie{
                 break;
             }
         }
-        n.getSortie().setOuvert(true);
+        n.getSortie().setOuvert(bo);
     }
 }

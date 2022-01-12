@@ -4,6 +4,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
+import java.util.Objects;
+
 public class Positions {
     private IntegerProperty posx1 = new SimpleIntegerProperty();
     public int getPosx1(){return posx1.get();}
@@ -31,5 +33,18 @@ public class Positions {
         this.setPosx2(posx2);
         this.setPosy1(posy1);
         this.setPosy2(posy2);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Positions positions = (Positions) o;
+        return (posx1 == positions.posx1 && posx2 == positions.posx2 && posy1 == positions.posy1 && posy2 == positions.posy2);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(posx1, posx2, posy1, posy2);
     }
 }

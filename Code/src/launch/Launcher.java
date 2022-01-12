@@ -12,14 +12,6 @@ public class Launcher extends Application {
     @Override
     public void start(Stage ps) throws Exception {
 
-        mv = new ManagerVue(ps);
-        //m = new Manager();
+        mv = new ManagerVue(ps, new Manager());
     }
-
-    public static Manager getM(){
-        return m;
-    }
-
-    public static ManagerVue getMv(){return mv;}
-
 }

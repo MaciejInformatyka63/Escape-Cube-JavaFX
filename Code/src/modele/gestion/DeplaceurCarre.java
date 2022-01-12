@@ -2,6 +2,7 @@ package modele.gestion;
 
 import launch.Launcher;
 import modele.metier.Positions;
+import view.gestion.ManagerVue;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    Launcher.getM().finMouvement();
+                    ManagerVue.getM().finMouvement();
                 }
             case 'b':
                 if (super.getE().getP().getPosy1() < getPosFinales().getPosy1()) {
@@ -24,7 +25,7 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    Launcher.getM().finMouvement();
+                    ManagerVue.getM().finMouvement();
                 }
             case 'g':
                 if (super.getE().getP().getPosx1() > getPosFinales().getPosx1()) {
@@ -32,7 +33,7 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    Launcher.getM().finMouvement();
+                    ManagerVue.getM().finMouvement();
                 }
             case 'd':
                 if (super.getE().getP().getPosx1() < getPosFinales().getPosx1()) {
@@ -40,10 +41,10 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    Launcher.getM().finMouvement();
+                    ManagerVue.getM().finMouvement();
                 }
             default:
-                Launcher.getM().finMouvement();
+                ManagerVue.getM().finMouvement();
         }
     }
 }

@@ -4,20 +4,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import modele.gestion.Manager;
 
-import java.awt.event.KeyEvent;
 
 public class ManagerVue {
-    Stage stage;
-    public ManagerVue(Stage ps) throws Exception{
+    private static Stage stage;
+    private static Manager m;
+
+    public ManagerVue(Stage ps, Manager m) throws Exception{
         stage=ps;
-        Parent r = FXMLLoader.load(getClass().getResource("/FXML/FenetreStart.fxml"));
+        this.m=m;
+        Parent r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
         Scene s = new Scene(r);
         stage.setScene(s);
         stage.show();
     }
 
-    public void quitterJeu(){
+    public static Manager getM(){
+        return m;
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void quitterJeu(){
         stage.close();
     }
 }
