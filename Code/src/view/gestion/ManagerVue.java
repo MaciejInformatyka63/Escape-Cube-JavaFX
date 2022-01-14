@@ -14,7 +14,7 @@ public class ManagerVue {
     public ManagerVue(Stage ps, Manager m) throws Exception{
         stage=ps;
         this.m=m;
-        Parent r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
+        Parent r = FXMLLoader.load(getClass().getResource("/FXML/FenetreStart.fxml"));
         Scene s = new Scene(r);
         stage.setScene(s);
         stage.show();
