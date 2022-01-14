@@ -6,7 +6,6 @@ import modele.chronos.ChronoRefresh;
 import modele.chronos.ChronoRefreshConcret;
 import modele.metier.*;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -59,6 +58,10 @@ public class Manager {
         indiceNiveauEnCours =0;
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
         startNiveau(niveauEnCours);
+    }
+
+    public Niveau getNiveauEnCours() {
+        return niveauEnCours;
     }
 
     public void startNiveau(Niveau n){

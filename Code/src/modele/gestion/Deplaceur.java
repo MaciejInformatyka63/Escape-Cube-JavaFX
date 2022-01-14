@@ -15,11 +15,11 @@ public abstract class Deplaceur {
     private int v;
     private Positions posFinales;
 
+    ChronoRefresh cf;
 
     public Element getE() {
         return e;
     }
-
     public void setE(Element e) {
         this.e = e;
     }
@@ -27,7 +27,6 @@ public abstract class Deplaceur {
     public char getD() {
         return d;
     }
-
     public void setD(char d) {
         this.d = d;
     }
@@ -35,10 +34,7 @@ public abstract class Deplaceur {
     public int getV() {
         return v;
     }
-
-    public void setV(int v) {
-        this.v = v;
-    }
+    public void setV(int v) {this.v = v;}
 
     public Positions getPosFinales() {
         return posFinales;
@@ -49,10 +45,12 @@ public abstract class Deplaceur {
     }
 
     public void detacherChrono(ChronoRefresh chrono) {
+        cf=null;
         chrono.delDeplaceur(this);
     }
 
     public void attacherChrono(ChronoRefresh chrono) {
+        cf=chrono;
         chrono.addDeplaceur(this);
     }
 

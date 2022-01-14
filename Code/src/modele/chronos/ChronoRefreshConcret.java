@@ -8,18 +8,19 @@ import static java.lang.Thread.sleep;
 public class ChronoRefreshConcret extends ChronoRefresh{
     @Override
     public void beep() {
-
         for (Deplaceur d: super.getLesDeplaceurs()) {
             Platform.runLater(d::deplacer);
         }
     }
 
     public void run() {
-        try {
-            sleep (1000/60);
-            beep();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while(true) {
+            try {
+                sleep(1000 / 60);
+                beep();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
