@@ -1,5 +1,6 @@
 package view.codeBehind;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,18 +28,18 @@ public class FenetreStart {
 
     @FXML
     protected EventHandler quitter(){
-        return null;
+        return event -> ManagerVue.getStage().close();
     }
 
-    @FXML
     protected EventHandler lancer() {
-        return new EventHandler() {
+        return new EventHandler<ActionEvent>() {
             @Override
-            public void handle(Event event) {
-                Stage stage = new Stage();
+            public void handle(ActionEvent event) {
+                Stage stage = ManagerVue.getStage();
                 Parent r = null;
                 try {
-                    r = FXMLLoader.load(getClass().getResource("FXML/Fenetre.fxml"));
+                    r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -51,7 +52,7 @@ public class FenetreStart {
 
     @FXML
     public void initialize() {
-        boutonLancer.setOnMouseClicked(lancer());
+        boutonLancer.setOnAction(lancer());
         boutonQuitter.setOnMouseClicked(quitter());
     }
 }
