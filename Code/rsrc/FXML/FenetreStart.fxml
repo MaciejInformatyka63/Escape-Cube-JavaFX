@@ -10,7 +10,7 @@
    <items>
       <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOM DU JEU" textAlignment="CENTER" />
+            <Text styleClass="textStart" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCAPE CUBE" textAlignment="CENTER" />
          </children>
       </FlowPane>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">

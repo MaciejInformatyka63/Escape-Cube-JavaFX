@@ -33,7 +33,9 @@ public class ManagerVue {
         Object o = new Object();
         try {
             Parent r = FXMLLoader.load(m.getClass().getResource("/FXML/FenetreFin.fxml"));
-            stage.setScene(new Scene(r));
+            Scene s = new Scene(r);
+            s.getStylesheets().add(m.getClass().getResource("/CSS/FenetreStartStyle.css").toExternalForm());
+            stage.setScene(s);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

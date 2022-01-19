@@ -14,6 +14,9 @@ public class Stub extends Chargeur{
         n.addMur(new MurConcret(new Positions(780,800,0,400)));
         n.addMur(new MurConcret(new Positions(0,800,0,20)));
         n.addMur(new MurConcret(new Positions(0,800,380,400)));
+
+        n.addMur(new MurConcret(new Positions(20,319,40,60)));
+
         n.addBouton(new BoutonTimer(new Positions(320,340,20,40),false));
         n.setSortie(new Sortie(new Positions(780,800,360,380)));
         m.addNiveau(n);

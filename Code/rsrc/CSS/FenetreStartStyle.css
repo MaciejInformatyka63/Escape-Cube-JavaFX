@@ -1,3 +1,17 @@
 #splitPane {
-    -fx-background-color: #333b47;
+    -fx-background-color: #290d4f;
+}
+
+#gridPane {
+    -fx-background-color: #290d4f;
+}
+
+.textFin {
+    -fx-fill: #f7f307;
+}
+
+.textStart {
+    -fx-fill: #f7f307;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
 }
