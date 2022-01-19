@@ -54,7 +54,7 @@ public class CollisionneurBouton extends Collisionneur{
 
     public Bouton surBouton(Element e, Niveau n) {
         for (Bouton b : n.getLesBoutons()) {
-            if(e.getP().equals(b.getP())) {
+            if(e.getP().getPosx1()==b.getP().getPosx1() && e.getP().getPosy1()==b.getP().getPosy1()) {
                 return b;
             }
         }

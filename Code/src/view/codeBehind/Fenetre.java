@@ -10,6 +10,7 @@ import launch.Launcher;
 import modele.metier.Bouton;
 import modele.metier.Mur;
 import modele.metier.Niveau;
+import modele.metier.Sortie;
 import view.gestion.ManagerVue;
 
 
@@ -43,6 +44,10 @@ public class Fenetre {
             r.fillProperty().bind(b.cProperty());
             pane.getChildren().add(r);
         }
+        Sortie s = n.getSortie();
+        r=new Rectangle(s.getP().getPosx1(),s.getP().getPosy1(),s.getP().getPosx2()-s.getP().getPosx1(),s.getP().getPosy2()-s.getP().getPosy1());
+        r.fillProperty().bind(s.cProperty());
+        pane.getChildren().add(r);
         pane.getChildren().add(carre);
         ManagerVue.getStage().addEventFilter(KeyEvent.KEY_PRESSED, event-> ManagerVue.getM().traiterTouche(event.getCode()));
     }

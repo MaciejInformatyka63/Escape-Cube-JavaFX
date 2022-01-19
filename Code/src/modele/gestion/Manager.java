@@ -5,6 +5,7 @@ import javafx.scene.input.KeyCode;
 import modele.chronos.ChronoRefresh;
 import modele.chronos.ChronoRefreshConcret;
 import modele.metier.*;
+import view.gestion.ManagerVue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Manager {
     private KeyCode toucheAppuiBouton;
     private Map<KeyCode,Character> touchesDeplacement;
     private DeplaceurCarre deplaceur;
+    private CollisionneurBouton cb;
     private List<Collisionneur> lesCollisionneurs;
     private Positions posFin;
     private ComparateurPos cpp;
@@ -56,7 +58,8 @@ public class Manager {
         cpp = new ComparateurPos();
         gsc = new GestionSortieConcrete();
         lesCollisionneurs.add(new CollisionneurMur());
-        lesCollisionneurs.add(new CollisionneurBouton());
+        cb=new CollisionneurBouton();
+        lesCollisionneurs.add(cb);
         indiceNiveauEnCours =0;
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
         startNiveau(niveauEnCours);
@@ -86,7 +89,13 @@ public class Manager {
                 deplaceur.deplacer();
 
             } else if (e.equals(toucheAppuiBouton)) {
+                Bouton b = cb.surBouton(niveauEnCours.getCarreJoueur(),niveauEnCours);
+                if (b!=null){
+                    System.out.println("test");
+                    b.setAppuye(!b.isAppuye());
+                    gsc.ouvrirSortie(niveauEnCours);
 
+                }
             }
         }
     }
@@ -96,7 +105,16 @@ public class Manager {
         gsc.ouvrirSortie(niveauEnCours);
         if(gsc.sortieElem(niveauEnCours, niveauEnCours.getCarreJoueur(), d/*A remplacer par la direction correspondant à la touche*/)) {
             indiceNiveauEnCours=indiceNiveauEnCours+1;
-            startNiveau(monde.getLesNiveaux().get(indiceNiveauEnCours));
+            if(indiceNiveauEnCours<monde.getLesNiveaux().size()) {
+                startNiveau(monde.getLesNiveaux().get(indiceNiveauEnCours));
+            }
+            else {
+                finJeu();
+            }
         }
+    }
+
+    public void finJeu(){
+        ManagerVue.chargerFin();
     }
 }

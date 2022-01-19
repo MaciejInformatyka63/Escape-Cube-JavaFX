@@ -29,6 +29,18 @@ public class ManagerVue {
         return stage;
     }
 
+    public static void chargerFin(){
+        Object o = new Object();
+        try {
+            Parent r = FXMLLoader.load(m.getClass().getResource("/FXML/FenetreFin.fxml"));
+            stage.setScene(new Scene(r));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
     public static void quitterJeu(){
         stage.close();
     }
