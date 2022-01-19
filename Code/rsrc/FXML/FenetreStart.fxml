@@ -10,7 +10,7 @@
    <items>
       <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Text styleClass="textStart" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCAPE CUBE" textAlignment="CENTER" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textStart" text="ESCAPE CUBE" textAlignment="CENTER" />
          </children>
       </FlowPane>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
@@ -19,7 +19,7 @@
                <FlowPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </FlowPane.margin></Button>
-            <Button mnemonicParsing="false" text="Explications">
+            <Button mnemonicParsing="false" onAction="#getExplications" text="Explications">
                <FlowPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </FlowPane.margin>

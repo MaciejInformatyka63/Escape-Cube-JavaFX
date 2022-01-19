@@ -72,6 +72,10 @@ public class Manager {
     public void startNiveau(Niveau n){
     }
 
+    public int getIndiceNiveauEnCours() {
+        return indiceNiveauEnCours;
+    }
+
     public void traiterTouche(KeyCode e){
         List<Positions> lesPos = new ArrayList<>();
         if(!mvmtEnCours) {
