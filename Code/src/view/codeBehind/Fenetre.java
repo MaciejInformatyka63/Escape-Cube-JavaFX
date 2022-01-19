@@ -7,6 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import launch.Launcher;
+import modele.metier.Bouton;
 import modele.metier.Mur;
 import modele.metier.Niveau;
 import view.gestion.ManagerVue;
@@ -34,6 +35,12 @@ public class Fenetre {
         for (Mur m: n.getLesMurs()) {
             r=new Rectangle(m.getP().getPosx1(),m.getP().getPosy1(),m.getP().getPosx2()-m.getP().getPosx1(),m.getP().getPosy2()-m.getP().getPosy1());
             r.setFill(Color.BLACK);
+            pane.getChildren().add(r);
+        }
+
+        for (Bouton b : n.getLesBoutons()) {
+            r=new Rectangle(b.getP().getPosx1(),b.getP().getPosy1(),b.getP().getPosx2()-b.getP().getPosx1(),b.getP().getPosy2()-b.getP().getPosy1());
+            r.fillProperty().bind(b.cProperty());
             pane.getChildren().add(r);
         }
         pane.getChildren().add(carre);

@@ -30,8 +30,10 @@ public class ComparateurPos {
                             posfin=p;
                         }
 
-                        else if (posfin.getPosy2()>p.getPosy2()){
-                            posfin=p;
+                        else if (p!= null) {
+                            if (posfin.getPosy2() < p.getPosy2()) {
+                                posfin = p;
+                            }
                         }
                     }
                     break;
@@ -41,9 +43,10 @@ public class ComparateurPos {
                         if (posfin==null){
                             posfin=p;
                         }
-
-                        else if (posfin.getPosy1()<p.getPosy1()){
-                            posfin=p;
+                        else if (p!= null) {
+                            if (posfin.getPosy1() > p.getPosy1()) {
+                                posfin = p;
+                            }
                         }
                     }
                     break;
@@ -55,9 +58,10 @@ public class ComparateurPos {
                         if (posfin==null){
                             posfin=p;
                         }
-
-                        else if (posfin.getPosx2()>p.getPosx2()){
-                            posfin=p;
+                        else if (p!= null) {
+                            if (posfin.getPosx2() < p.getPosx2()) {
+                                posfin = p;
+                            }
                         }
                     }
                     break;
@@ -68,9 +72,10 @@ public class ComparateurPos {
                         if (posfin==null){
                             posfin=p;
                         }
-
-                        else if (posfin.getPosx1()<p.getPosx1()){
-                            posfin=p;
+                        else if (p!= null) {
+                            if (posfin.getPosx1() > p.getPosx1()) {
+                                posfin = p;
+                            }
                         }
                     }
                     break;

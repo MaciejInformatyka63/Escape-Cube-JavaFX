@@ -40,6 +40,7 @@ public class CollisionneurMur extends Collisionneur {
                             || (mur.getP().getPosx2() >= e.getP().getPosx1() && e.getP().getPosx2() >= mur.getP().getPosx1())) {
                         if (mur.getP().getPosy1() < changer && mur.getP().getPosy1() >= e.getP().getPosy2()) {
                             changer = mur.getP().getPosy1();
+
                         }
                     }
                 }

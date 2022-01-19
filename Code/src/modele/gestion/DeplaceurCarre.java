@@ -1,6 +1,5 @@
 package modele.gestion;
 
-import modele.metier.Positions;
 import view.gestion.ManagerVue;
 
 public class DeplaceurCarre extends Deplaceur{
@@ -15,7 +14,6 @@ public class DeplaceurCarre extends Deplaceur{
 
                 else {
                     super.getE().setP(getPosFinales());
-                    //detacherChrono(super.cf);
                     ManagerVue.getM().finMouvement();
                 }
                 break;
@@ -27,7 +25,6 @@ public class DeplaceurCarre extends Deplaceur{
 
                 else {
                     super.getE().setP(getPosFinales());
-                    //detacherChrono(super.cf);
                     ManagerVue.getM().finMouvement();
                 }
                 break;
@@ -38,7 +35,6 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    //detacherChrono(super.cf);
                     ManagerVue.getM().finMouvement();
                 }
                 break;
@@ -49,12 +45,9 @@ public class DeplaceurCarre extends Deplaceur{
                 }
                 else {
                     super.getE().setP(getPosFinales());
-                    //detacherChrono(super.cf);
                     ManagerVue.getM().finMouvement();
                 }
                 break;
-            default:
-                //ManagerVue.getM().finMouvement();
         }
     }
 }

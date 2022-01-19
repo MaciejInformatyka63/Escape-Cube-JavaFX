@@ -10,7 +10,7 @@ public class CollisionneurBouton extends Collisionneur{
     @Override
     public Positions Collision(Element e, char d, Niveau niv) {
         Bouton b;
-        Positions posfin= e.getP();
+        Positions posfin= null;
         switch (d) {
             case 'h' :
                 for (Bouton bouton : niv.getLesBoutons()) {
