@@ -36,7 +36,6 @@ public class FenetreStart {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = ManagerVue.getStage();
-                ManagerVue.getM();
                 Parent r = null;
                 try {
                     r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));

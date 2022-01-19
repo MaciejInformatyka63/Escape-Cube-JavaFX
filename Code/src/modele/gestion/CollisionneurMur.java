@@ -24,9 +24,9 @@ public class CollisionneurMur extends Collisionneur {
             case 'h' :
                 changer=0;
                 for (Mur mur : niv.getLesMurs()) {
-                    if ((mur.getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < mur.getP().getPosx2())
-                            || (mur.getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > mur.getP().getPosx1())) {
-                        if (mur.getP().getPosy2() > changer && mur.getP().getPosy2() < e.getP().getPosy1()) {
+                    if ((mur.getP().getPosx1() <= e.getP().getPosx2() && e.getP().getPosx1() <= mur.getP().getPosx2())
+                            || (mur.getP().getPosx2() >= e.getP().getPosx1() && e.getP().getPosx2() >= mur.getP().getPosx1())) {
+                        if (mur.getP().getPosy2() > changer && mur.getP().getPosy2() <= e.getP().getPosy1()) {
                             changer = mur.getP().getPosy2();
                         }
                     }
@@ -36,9 +36,9 @@ public class CollisionneurMur extends Collisionneur {
             case 'b' :
                 changer=10000;
                 for (Mur mur : niv.getLesMurs()) {
-                    if ((mur.getP().getPosx1() < e.getP().getPosx2() && e.getP().getPosx1() < mur.getP().getPosx2())
-                            || (mur.getP().getPosx2() > e.getP().getPosx1() && e.getP().getPosx2() > mur.getP().getPosx1())) {
-                        if (mur.getP().getPosy1() < changer && mur.getP().getPosy1() > e.getP().getPosy2()) {
+                    if ((mur.getP().getPosx1() <= e.getP().getPosx2() && e.getP().getPosx1() <= mur.getP().getPosx2())
+                            || (mur.getP().getPosx2() >= e.getP().getPosx1() && e.getP().getPosx2() >= mur.getP().getPosx1())) {
+                        if (mur.getP().getPosy1() < changer && mur.getP().getPosy1() >= e.getP().getPosy2()) {
                             changer = mur.getP().getPosy1();
                         }
                     }
@@ -48,9 +48,9 @@ public class CollisionneurMur extends Collisionneur {
             case 'g' :
                 changer=0;
                 for (Mur mur : niv.getLesMurs()) {
-                    if ((mur.getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < mur.getP().getPosy2())
-                            || (mur.getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > mur.getP().getPosy1())) {
-                        if (mur.getP().getPosx2() > changer && mur.getP().getPosx2() < e.getP().getPosx1()) {
+                    if ((mur.getP().getPosy1() <= e.getP().getPosy2() && e.getP().getPosy1() <= mur.getP().getPosy2())
+                            || (mur.getP().getPosy2() >= e.getP().getPosy1() && e.getP().getPosy2() >= mur.getP().getPosy1())) {
+                        if (mur.getP().getPosx2() > changer && mur.getP().getPosx2() <= e.getP().getPosx1()) {
                             changer = mur.getP().getPosx2();
                         }
                     }
@@ -60,9 +60,9 @@ public class CollisionneurMur extends Collisionneur {
             case 'd' :
                 changer=100000;
                 for (Mur mur : niv.getLesMurs()) {
-                    if ((mur.getP().getPosy1() < e.getP().getPosy2() && e.getP().getPosy1() < mur.getP().getPosy2())
-                            || (mur.getP().getPosy2() > e.getP().getPosy1() && e.getP().getPosy2() > mur.getP().getPosy1())) {
-                        if (mur.getP().getPosx1() < changer && mur.getP().getPosx1() > e.getP().getPosx2()) {
+                    if ((mur.getP().getPosy1() <= e.getP().getPosy2() && e.getP().getPosy1() <= mur.getP().getPosy2())
+                            || (mur.getP().getPosy2() >= e.getP().getPosy1() && e.getP().getPosy2() >= mur.getP().getPosy1())) {
+                        if (mur.getP().getPosx1() <= changer && mur.getP().getPosx1() >= e.getP().getPosx2()) {
                             changer = mur.getP().getPosx1();
                         }
                     }

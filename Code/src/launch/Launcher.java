@@ -6,7 +6,6 @@ import modele.gestion.Manager;
 import view.gestion.ManagerVue;
 
 public class Launcher extends Application {
-    private static Manager m;
     private static ManagerVue mv;
 
     @Override

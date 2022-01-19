@@ -24,11 +24,12 @@ public class Manager {
     private ComparateurPos cpp;
     private GestionSortieConcrete gsc;
     private boolean mvmtEnCours;
+    private char d;
 
     private ChronoRefresh chronoRefresh;
 
     public Manager(){
-        vitesse = 10;
+        vitesse = 5;
         mvmtEnCours=false;
         lesCollisionneurs = new ArrayList<>();
         touchesDeplacement = new TreeMap<>();
@@ -51,6 +52,7 @@ public class Manager {
         Thread t = new Thread (chronoRefresh);
         t.start();
         deplaceur = new DeplaceurCarre();
+        deplaceur.attacherChrono(chronoRefresh);
         cpp = new ComparateurPos();
         gsc = new GestionSortieConcrete();
         lesCollisionneurs.add(new CollisionneurMur());
@@ -65,34 +67,34 @@ public class Manager {
     }
 
     public void startNiveau(Niveau n){
-
     }
 
     public void traiterTouche(KeyCode e){
         List<Positions> lesPos = new ArrayList<>();
-        if(touchesDeplacement.containsKey(e) && !mvmtEnCours) {
-            char d = touchesDeplacement.get(e);
-            mvmtEnCours=true;
-            for (Collisionneur col : lesCollisionneurs) {
-                lesPos.add(col.Collision(niveauEnCours.getCarreJoueur(), d, niveauEnCours));
-            }
-            posFin = cpp.posPlusProche(lesPos,d);
-            deplaceur.setE(niveauEnCours.getCarreJoueur());
-            deplaceur.setD(d);
-            deplaceur.setPosFinales(posFin);
-            deplaceur.setV(vitesse);
-            deplaceur.attacherChrono(chronoRefresh);
-            deplaceur.deplacer();
-        }
-        else if (e.equals(toucheAppuiBouton)) {
+        if(!mvmtEnCours) {
+            if (touchesDeplacement.containsKey(e)) {
+                d = touchesDeplacement.get(e);
+                mvmtEnCours = true;
+                for (Collisionneur col : lesCollisionneurs) {
+                    lesPos.add(col.Collision(niveauEnCours.getCarreJoueur(), d, niveauEnCours));
+                }
+                posFin = cpp.posPlusProche(lesPos, d);
+                deplaceur.setE(niveauEnCours.getCarreJoueur());
+                deplaceur.setD(d);
+                deplaceur.setPosFinales(posFin);
+                deplaceur.setV(vitesse);
+                deplaceur.deplacer();
 
+            } else if (e.equals(toucheAppuiBouton)) {
+
+            }
         }
     }
 
     public void finMouvement(){
         mvmtEnCours=false;
         gsc.ouvrirSortie(niveauEnCours);
-        if(gsc.sortieElem(niveauEnCours, niveauEnCours.getCarreJoueur(), 'h'/*A remplacer par la direction correspondant à la touche*/)) {
+        if(gsc.sortieElem(niveauEnCours, niveauEnCours.getCarreJoueur(), d/*A remplacer par la direction correspondant à la touche*/)) {
             indiceNiveauEnCours=indiceNiveauEnCours+1;
             startNiveau(monde.getLesNiveaux().get(indiceNiveauEnCours));
         }
