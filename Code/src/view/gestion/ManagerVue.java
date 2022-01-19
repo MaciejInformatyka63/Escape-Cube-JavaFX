@@ -16,6 +16,7 @@ public class ManagerVue {
         this.m=m;
         Parent r = FXMLLoader.load(getClass().getResource("/FXML/FenetreStart.fxml"));
         Scene s = new Scene(r);
+        s.getStylesheets().add(getClass().getResource("/CSS/FenetreStartStyle.css").toExternalForm());
         stage.setScene(s);
         stage.show();
     }
