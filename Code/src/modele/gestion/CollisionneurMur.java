@@ -31,7 +31,7 @@ public class CollisionneurMur extends Collisionneur {
                         }
                     }
                 }
-                return new Positions(e.getP().getPosx1(),e.getP().getPosx2(),changer,changer+(e.getP().getPosy2()-e.getP().getPosy1()));
+                return new Positions(e.getP().getPosx1(),e.getP().getPosx2(),changer+1,changer+(e.getP().getPosy2()-e.getP().getPosy1())+1);
 
             case 'b' :
                 changer=10000;
@@ -44,7 +44,7 @@ public class CollisionneurMur extends Collisionneur {
                         }
                     }
                 }
-                return new Positions(e.getP().getPosx1(),e.getP().getPosx2(),changer-(e.getP().getPosy2()-e.getP().getPosy1()),changer);
+                return new Positions(e.getP().getPosx1(),e.getP().getPosx2(),changer-(e.getP().getPosy2()-e.getP().getPosy1())-1,changer-1);
 
             case 'g' :
                 changer=0;
@@ -56,7 +56,7 @@ public class CollisionneurMur extends Collisionneur {
                         }
                     }
                 }
-                return new Positions(changer,changer+(e.getP().getPosx2()-e.getP().getPosx1()),e.getP().getPosy1(),e.getP().getPosy2());
+                return new Positions(changer+1,changer+(e.getP().getPosx2()-e.getP().getPosx1())+1,e.getP().getPosy1(),e.getP().getPosy2());
 
             case 'd' :
                 changer=100000;
@@ -68,7 +68,7 @@ public class CollisionneurMur extends Collisionneur {
                         }
                     }
                 }
-                return new Positions(changer-(e.getP().getPosx2()-e.getP().getPosx1()),changer,e.getP().getPosy1(),e.getP().getPosy2());
+                return new Positions(changer-(e.getP().getPosx2()-e.getP().getPosx1())-1,changer-1,e.getP().getPosy1(),e.getP().getPosy2());
 
             default :
                 return e.getP();
