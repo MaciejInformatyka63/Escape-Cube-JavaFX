@@ -5,7 +5,7 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
-public class CollisionneurBouton extends Collisionneur{
+public class CollisionneurBouton implements Collisionneur{
 
     @Override
     public Positions Collision(Element e, char d, Niveau niv) {

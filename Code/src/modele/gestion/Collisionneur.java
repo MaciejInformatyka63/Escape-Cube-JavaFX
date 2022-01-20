@@ -4,7 +4,7 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
-public abstract class Collisionneur {
+public interface Collisionneur {
 
-    public abstract Positions Collision (Element e, char d, Niveau niv);
+    Positions Collision (Element e, char d, Niveau niv);
 }

@@ -7,9 +7,13 @@ import view.gestion.ManagerVue;
 
 public class Launcher extends Application {
 
-    @Override
+    /**
+     * Permet de lancer l'application en instanciant un ManagerVue
+     * @param ps Stage de l'application
+     * @throws Exception car appel au FXMLLoader
+     */
     public void start(Stage ps) throws Exception {
 
-        ManagerVue mv = new ManagerVue(ps, new Manager());
+        new ManagerVue(ps, new Manager());
     }
 }

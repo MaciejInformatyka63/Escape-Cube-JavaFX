@@ -3,6 +3,9 @@ package modele.chronos;
 import static java.lang.Thread.sleep;
 
 public class ChronoBoutonMoyen extends ChronoBoutonLongueur{
+    /**
+     * Notifie les Observateurs après que 120 secondes sont passées
+     */
     @Override
     public void run() {
         try {
@@ -10,7 +13,7 @@ public class ChronoBoutonMoyen extends ChronoBoutonLongueur{
             beep();
         }
         catch (Exception e){
-
+            return;
         }
     }
 }

@@ -37,6 +37,7 @@ public class ManagerVue {
             Scene s = new Scene(r);
             s.getStylesheets().add(m.getClass().getResource("/CSS/FenetreStartStyle.css").toExternalForm());
             stage.setScene(s);
+            stage.setTitle("Fin du jeu");
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,7 +59,7 @@ public class ManagerVue {
         }
         Scene s = new Scene(r);
         stage.setScene(s);
-        stage.setTitle("Niveau "+ ManagerVue.getM().getIndiceNiveauEnCours());
+        stage.setTitle("Niveau "+ (ManagerVue.getM().getIndiceNiveauEnCours()+1) );
         stage.show();
     }
 }

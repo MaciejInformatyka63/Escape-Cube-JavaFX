@@ -5,7 +5,7 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Sortie;
 
-public class GestionSortieConcrete extends GestionSortie{
+public class GestionSortieConcrete implements GestionSortie{
 
     @Override
     public boolean sortieElem(Niveau n, Element e, char d) {

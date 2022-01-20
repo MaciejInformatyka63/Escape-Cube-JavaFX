@@ -16,7 +16,7 @@ public class Manager {
     private Monde monde;
     private Niveau niveauEnCours;
     private int indiceNiveauEnCours;
-    int vitesse;
+    private int vitesse;
     private KeyCode toucheAppuiBouton;
     private Map<KeyCode,Character> touchesDeplacement;
     private DeplaceurCarre deplaceur;
@@ -44,6 +44,13 @@ public class Manager {
         startJeu(monde);
     }
 
+    public int getIndiceNiveauEnCours() {
+        return indiceNiveauEnCours;
+    }
+    public Niveau getNiveauEnCours() {
+        return niveauEnCours;
+    }
+
     public Monde loadmonde(){
         Chargeur c = new Stub();
         return c.loadMonde();
@@ -62,20 +69,13 @@ public class Manager {
         lesCollisionneurs.add(cb);
         indiceNiveauEnCours =0;
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
-        //startNiveau(niveauEnCours);
     }
 
-    public Niveau getNiveauEnCours() {
-        return niveauEnCours;
-    }
 
     public void startNiveau(){
         ManagerVue.lancerNiveau();
     }
 
-    public int getIndiceNiveauEnCours() {
-        return indiceNiveauEnCours;
-    }
 
     public void traiterTouche(KeyCode e){
         List<Positions> lesPos = new ArrayList<>();

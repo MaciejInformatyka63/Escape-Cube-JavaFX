@@ -1,5 +1,9 @@
 package modele.chronos;
 
-public abstract class Chrono implements Runnable{
-    public abstract void beep();
+public interface Chrono extends Runnable{
+
+    /**
+     * Méthode notifiant toutes les classes qui observent le chrono
+     */
+    void beep();
 }

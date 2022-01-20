@@ -5,7 +5,7 @@ import modele.metier.Mur;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
-public class CollisionneurMur extends Collisionneur {
+public class CollisionneurMur implements Collisionneur {
 
     /*
     La variable changer permet de savoir la valeur par laquelle on doit changer la position
