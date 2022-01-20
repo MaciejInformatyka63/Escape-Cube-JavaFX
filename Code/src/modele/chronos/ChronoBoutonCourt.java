@@ -10,7 +10,7 @@ public class ChronoBoutonCourt extends ChronoBoutonLongueur{
     @Override
     public void run() {
         try {
-            sleep(60000);
+            sleep(15000);
             beep();
         }
         catch (Exception e) {

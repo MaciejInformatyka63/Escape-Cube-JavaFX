@@ -29,7 +29,14 @@ public class FenetreStart {
     private void getExplications() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Explications");
-        alert.setContentText("Déplacement : Z Q S D \n\n Appuyer sur les boutons : Espace");
+        //alert.setContentText("Déplacement : Z Q S D \n\n Appuyer sur les boutons : Espace");
+        alert.setContentText("But : Sortir du labyrinthe en appuyant sur tous les boutons !"+
+                "\n\n"+"Commandes :" +
+                "\n"+"-  Haut : Z" +
+                "\n"+"-  Bas : S" +
+                "\n"+"-  Gauche : Q" +
+                "\n"+"-  Droite : D" +
+                "\n"+"-  Appuyer sur les boutons : ESPACE");
 
         alert.showAndWait();
     }

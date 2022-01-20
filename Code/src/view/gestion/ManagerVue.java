@@ -20,6 +20,7 @@ public class ManagerVue {
         Scene s = new Scene(r);
         s.getStylesheets().add(getClass().getResource("/CSS/FenetreStartStyle.css").toExternalForm());
         stage.setScene(s);
+        stage.setTitle("Menu");
         stage.show();
     }
 
