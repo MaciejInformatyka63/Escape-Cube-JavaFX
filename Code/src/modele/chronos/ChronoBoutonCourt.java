@@ -5,7 +5,7 @@ import static java.lang.Thread.sleep;
 public class ChronoBoutonCourt extends ChronoBoutonLongueur{
 
     /**
-     * Notifie les Observateurs après que 60 secondes sont passées
+     * Notifie les Observateurs après que 15 secondes sont passées
      */
     @Override
     public void run() {

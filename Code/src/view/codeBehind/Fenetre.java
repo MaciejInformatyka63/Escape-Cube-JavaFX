@@ -18,6 +18,9 @@ public class Fenetre {
     @FXML
     private Pane pane;
 
+    /**
+     * Méthode initialisant la fenêtre, qui charge le niveau en cours et l'affiche, puis écoute le clavier afin de pouvoir transmettre les appuis au Manager
+     */
     @FXML
     public void initialize() {
 

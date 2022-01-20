@@ -13,6 +13,12 @@ public class ManagerVue {
     private static Stage stage;
     private static Manager m;
 
+    /**
+     * Constructeur de la classe ManagerVue
+     * @param ps Stage de l'application
+     * @param m Manager de l'application
+     * @throws Exception Exception due à l'appel au FXMLLoader
+     */
     public ManagerVue(Stage ps, Manager m) throws Exception{
         stage=ps;
         this.m=m;
@@ -24,14 +30,25 @@ public class ManagerVue {
         stage.show();
     }
 
+    /**
+     * Getter de l'attribut m
+     * @return attribut m
+     */
     public static Manager getM(){
         return m;
     }
 
+    /**
+     * Setter de l'attribut stage
+     * @return attribut stage
+     */
     public static Stage getStage() {
         return stage;
     }
 
+    /**
+     * Méthode chargeant l'écran de fin du jeu
+     */
     public static void chargerFin(){
         try {
             Parent r = FXMLLoader.load(m.getClass().getResource("/FXML/FenetreFin.fxml"));
@@ -46,10 +63,9 @@ public class ManagerVue {
         }
     }
 
-    public static void quitterJeu(){
-        stage.close();
-    }
-
+    /**
+     * Méthode qui permet de lancer un niveau en rechargeant la fenêtre avec les nouveaux éléments
+     */
     public static void lancerNiveau() {
         Parent r;
         try {
