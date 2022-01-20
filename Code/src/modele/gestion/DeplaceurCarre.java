@@ -4,47 +4,51 @@ import view.gestion.ManagerVue;
 
 public class DeplaceurCarre extends Deplaceur{
 
+    /**
+     * Méthode déplaçant un carré joueur en fonction de la vitesse,ainsi que des positions finales et de la direction qui sont en attribut du Deplaceur.
+     * Cette méthode ne fait qu'un déplacement de distance v, le chrono le fait se reproduire
+     */
     public void deplacer() {
-        switch (super.getD()) {
+        switch (d) {
             case 'h':
-                if (super.getE().getP().getPosy1() > super.getPosFinales().getPosy1()) {
-                    super.getE().getP().setPosy1(super.getE().getP().getPosy1() - super.getV());
-                    super.getE().getP().setPosy2(super.getE().getP().getPosy2() - super.getV());
+                if (e.getP().getPosy1() > posFinales.getPosy1()) {
+                    e.getP().setPosy1(e.getP().getPosy1() - v);
+                    e.getP().setPosy2(e.getP().getPosy2() - v);
                 }
 
                 else {
-                    super.getE().setP(getPosFinales());
+                    e.setP(getPosFinales());
                     ManagerVue.getM().finMouvement();
                 }
                 break;
             case 'b':
-                if (super.getE().getP().getPosy1() < super.getPosFinales().getPosy1()) {
-                    super.getE().getP().setPosy1(super.getE().getP().getPosy1() + super.getV());
-                    super.getE().getP().setPosy2(super.getE().getP().getPosy2() + super.getV());
+                if (e.getP().getPosy1() < posFinales.getPosy1()) {
+                    e.getP().setPosy1(e.getP().getPosy1() + v);
+                    e.getP().setPosy2(e.getP().getPosy2() + v);
                 }
 
                 else {
-                    super.getE().setP(getPosFinales());
+                    e.setP(getPosFinales());
                     ManagerVue.getM().finMouvement();
                 }
                 break;
             case 'g':
-                if (super.getE().getP().getPosx1() > super.getPosFinales().getPosx1()) {
-                    super.getE().getP().setPosx1(super.getE().getP().getPosx1() - super.getV());
-                    super.getE().getP().setPosx2(super.getE().getP().getPosx2() - super.getV());
+                if (e.getP().getPosx1() > posFinales.getPosx1()) {
+                    e.getP().setPosx1(e.getP().getPosx1() - v);
+                    e.getP().setPosx2(e.getP().getPosx2() - v);
                 }
                 else {
-                    super.getE().setP(getPosFinales());
+                    e.setP(getPosFinales());
                     ManagerVue.getM().finMouvement();
                 }
                 break;
             case 'd':
-                if (super.getE().getP().getPosx1() < super.getPosFinales().getPosx1()) {
-                    super.getE().getP().setPosx1(super.getE().getP().getPosx1() + super.getV());
-                    super.getE().getP().setPosx2(super.getE().getP().getPosx2() + super.getV());
+                if (e.getP().getPosx1() < posFinales.getPosx1()) {
+                    e.getP().setPosx1(e.getP().getPosx1() + v);
+                    e.getP().setPosx2(e.getP().getPosx2() + v);
                 }
                 else {
-                    super.getE().setP(getPosFinales());
+                    e.setP(getPosFinales());
                     ManagerVue.getM().finMouvement();
                 }
                 break;

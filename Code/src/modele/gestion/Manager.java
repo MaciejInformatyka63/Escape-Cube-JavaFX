@@ -30,6 +30,9 @@ public class Manager {
 
     private ChronoRefresh chronoRefresh;
 
+    /**
+     * Constructeur du Manager qui crée tous les éléments nécessaires au jeu comme le monde ou les touches, avant de lancer le jeu
+     */
     public Manager(){
         vitesse = 5;
         mvmtEnCours=false;
@@ -44,18 +47,30 @@ public class Manager {
         startJeu(monde);
     }
 
-    public int getIndiceNiveauEnCours() {
-        return indiceNiveauEnCours;
-    }
-    public Niveau getNiveauEnCours() {
-        return niveauEnCours;
-    }
+    /**
+     * getter de l'attribut indiceNiveauEnCours
+     * @return attribut indiceNiveauEnCours
+     */
+    public int getIndiceNiveauEnCours() {return indiceNiveauEnCours;}
+    /**
+     * getter de l'attribut niveauEnCours
+     * @return attribut niveauEnCours
+     */
+    public Niveau getNiveauEnCours() {return niveauEnCours;}
 
+    /**
+     * Méthode qui fait appel à un chargeur pour obtenir un monde
+     * @return Monde chargé par le chargeur
+     */
     public Monde loadmonde(){
         Chargeur c = new Stub();
         return c.loadMonde();
     }
 
+    /**
+     * Méthode qui instancie tout le nécessaire pour commencer le jeu, dont la boucle de raffraichissement, les déplaceurs et les collisionneurs, avant de récupérer le premier niveau du monde
+     * @param m Monde dans lequel sont stockés les niveaux
+     */
     public void startJeu(Monde m) {
         chronoRefresh=new ChronoRefreshConcret();
         Thread t = new Thread (chronoRefresh);
@@ -71,12 +86,19 @@ public class Manager {
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
     }
 
-
+    /**
+     * Méthode qui lance un niveau via le ManagerVue
+     */
     public void startNiveau(){
         ManagerVue.lancerNiveau();
     }
 
-
+    /**
+     * Méthode qui permet de traiter une touche appuyée, pour faire les actions correspondantes
+     * si c'est une touche de déplacement, faire le déplacement correspondant
+     * si c'est la touche pour appuyer sur le bouton, appuyer sur ledit bouton
+     * @param e
+     */
     public void traiterTouche(KeyCode e){
         List<Positions> lesPos = new ArrayList<>();
         if(!mvmtEnCours) {
@@ -96,14 +118,18 @@ public class Manager {
             } else if (e.equals(toucheAppuiBouton)) {
                 Bouton b = cb.surBouton(niveauEnCours.getCarreJoueur(),niveauEnCours);
                 if (b!=null){
-                    b.setAppuye(!b.isAppuye());
-                    gsc.ouvrirSortie(niveauEnCours);
-
+                    if(!b.isAppuye()) {
+                        b.setAppuye(true);
+                        gsc.ouvrirSortie(niveauEnCours);
+                    }
                 }
             }
         }
     }
 
+    /**
+     * Méthode qui permet d'arrêter le mouvement, et qui vérifie si le carréjoueur peut sortir du niveau
+     */
     public void finMouvement(){
         mvmtEnCours=false;
         gsc.ouvrirSortie(niveauEnCours);
@@ -119,6 +145,9 @@ public class Manager {
         }
     }
 
+    /**
+     * Méthode lançant la fin du jeu, en chargeant l'écran de fin via le ManagerVue
+     */
     public void finJeu(){
         ManagerVue.chargerFin();
     }

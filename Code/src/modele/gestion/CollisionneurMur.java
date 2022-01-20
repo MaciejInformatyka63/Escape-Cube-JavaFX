@@ -17,6 +17,14 @@ public class CollisionneurMur implements Collisionneur {
         Enfin, on retourne les positions modifiées de l'élément à retourner
      */
 
+    /**
+     * Méthode retournant les positions d'une collision avec le mur le plus proche dans une direction donnée
+     *
+     * @param e Element qui se déplace
+     * @param d Direction dans laquelle l'élément se déplace
+     * @param niv Niveau dans lequel l'élément se déplace
+     * @return positions modifiées de l'élément
+     */
     @Override
     public Positions Collision(Element e, char d, Niveau niv) {
         int changer;

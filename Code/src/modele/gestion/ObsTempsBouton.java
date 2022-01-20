@@ -1,10 +1,9 @@
 package modele.gestion;
 
-import modele.metier.Bouton;
 
 public abstract class ObsTempsBouton extends ObsAppuye{
-    @Override
-    public Bouton getBoutonSujet() {return boutonSujet;}
-
+    /**
+     * Méthode qui fait les actions correspondantes lorsque le chrono notifie l'observateur
+      */
     public abstract void updatechrono();
 }

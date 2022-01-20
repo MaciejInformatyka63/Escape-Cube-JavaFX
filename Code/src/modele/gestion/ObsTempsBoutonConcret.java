@@ -4,6 +4,9 @@ import modele.chronos.ChronoBoutonCourt;
 import modele.chronos.ChronoBoutonLongueur;
 
 public class ObsTempsBoutonConcret extends ObsTempsBouton{
+    /**
+     * Méthode lançant un chrono une fois le bouton appuyé et qui attache cet observateur au chrono
+     */
     @Override
     public void updatebouton() {
         ChronoBoutonLongueur cbl=new ChronoBoutonCourt();
@@ -12,6 +15,9 @@ public class ObsTempsBoutonConcret extends ObsTempsBouton{
         cbl.attacher(this);
     }
 
+    /**
+     * Méthode qui désenclanche le bouton lorsque le chrono arrive à la fin
+     */
     @Override
     public void updatechrono() {
         boutonSujet.setAppuye(false);
