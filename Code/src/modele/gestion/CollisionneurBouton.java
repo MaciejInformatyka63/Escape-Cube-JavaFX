@@ -5,6 +5,9 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
+/**
+ * Classe permettant de gérer les collisions entre des éléments et des boutons dans un niveau.
+ */
 public class CollisionneurBouton implements Collisionneur{
 
     /**

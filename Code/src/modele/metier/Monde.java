@@ -3,6 +3,9 @@ package modele.metier;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe contenant tous les niveaux du jeu
+ */
 public class Monde {
     private List<Niveau> lesNiveaux;
 

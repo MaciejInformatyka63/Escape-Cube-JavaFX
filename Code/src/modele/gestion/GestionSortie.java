@@ -3,6 +3,9 @@ package modele.gestion;
 import modele.metier.Element;
 import modele.metier.Niveau;
 
+/**
+ * Interface permettant de gérer les actions en lien avec la Srtie d'un Niveau
+ */
 public interface GestionSortie {
 
     /**

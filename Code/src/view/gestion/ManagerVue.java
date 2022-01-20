@@ -8,7 +8,9 @@ import modele.gestion.Manager;
 
 import java.io.IOException;
 
-
+/**
+ * Classe gérant la cinématique de l'application
+ */
 public class ManagerVue {
     private static Stage stage;
     private static Manager m;

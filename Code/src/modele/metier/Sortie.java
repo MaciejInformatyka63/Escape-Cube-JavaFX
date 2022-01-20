@@ -4,6 +4,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.paint.Color;
 
+
+/**
+ * Classe représentant la sortie d'un niveau
+ */
 public class Sortie extends Element{
     private boolean ouvert;
 

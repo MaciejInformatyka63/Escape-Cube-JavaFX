@@ -5,6 +5,9 @@ import modele.gestion.Deplaceur;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe permettant de rafraîchir la position des éléments à l'écran
+ */
 public abstract class ChronoRefresh implements Chrono{
 
     private List<Deplaceur> lesDeplaceurs;

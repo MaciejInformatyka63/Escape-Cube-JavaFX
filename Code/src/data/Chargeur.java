@@ -2,7 +2,9 @@ package data;
 
 import modele.metier.Monde;
 
-
+/**
+ * Interface de chargement d'un monde
+ */
 public interface Chargeur {
 
     /**

@@ -2,6 +2,9 @@ package modele.chronos;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * Classe permettant de garder un bouton appuyé pendant un long laps de temps
+ */
 public class ChronoBoutonLent extends ChronoBoutonLongueur{
     /**
      * Notifie les Observateurs après que 180 secondes sont passées

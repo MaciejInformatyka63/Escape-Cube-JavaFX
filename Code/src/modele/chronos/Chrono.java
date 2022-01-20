@@ -1,5 +1,8 @@
 package modele.chronos;
 
+/**
+ * Interface permettant d'implémenter une gestion du temps dans d'autres threads
+ */
 public interface Chrono extends Runnable{
 
     /**

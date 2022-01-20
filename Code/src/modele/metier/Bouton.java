@@ -9,6 +9,9 @@ import modele.gestion.ObsTempsBoutonConcret;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe représentant un Bouton
+ */
 public abstract class Bouton extends Element{
     protected boolean appuye;
     private List<ObsAppuye> lesObservateurs;

@@ -4,6 +4,9 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
+/**
+ * Interface permettant de gérer les collisions dans un niveau
+ */
 public interface Collisionneur {
     /**
      * Méthode permettant de savoir si une collision va se produire, et, si oui, où elle se fait.

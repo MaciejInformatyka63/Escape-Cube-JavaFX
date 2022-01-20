@@ -6,6 +6,9 @@ import java.util.List;
 
 import static java.lang.Math.abs;
 
+/**
+ * Classe permettant de comparer des positions
+ */
 public class ComparateurPos {
     /**
      * Permet de comparer des positions afin de savoir laquelle se trouve la plus proche dans une direction donnée

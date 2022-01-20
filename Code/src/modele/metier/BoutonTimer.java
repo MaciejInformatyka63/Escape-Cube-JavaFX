@@ -1,5 +1,8 @@
 package modele.metier;
 
+/**
+ * Classe représentant un bouton lié à un Timer
+ */
 public class BoutonTimer extends Bouton{
 
     /**

@@ -2,6 +2,9 @@ package modele.gestion;
 
 import modele.metier.Bouton;
 
+/**
+ * Classe permettant d'observer un Bouton
+ */
 public abstract class ObsAppuye {
 
     protected Bouton boutonSujet;

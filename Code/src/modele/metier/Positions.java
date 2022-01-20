@@ -4,6 +4,9 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
+/**
+ * Classe stockant les positions d'un élément
+ */
 public class Positions {
 
     private IntegerProperty posx1 = new SimpleIntegerProperty();

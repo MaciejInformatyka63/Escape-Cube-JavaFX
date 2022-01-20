@@ -5,6 +5,9 @@ import javafx.stage.Stage;
 import modele.gestion.Manager;
 import view.gestion.ManagerVue;
 
+/**
+ * Classe qui lance l'Application
+ */
 public class Launcher extends Application {
 
     /**

@@ -1,5 +1,8 @@
 package modele.metier;
 
+/**
+ * Classe représentant un Element du jeu
+ */
 public abstract class Element {
 
     private Positions p;

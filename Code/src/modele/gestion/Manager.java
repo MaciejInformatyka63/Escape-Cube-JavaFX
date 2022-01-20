@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Classe gérant le déroulement de l'application et lançant les appels aux autres classes
+ */
 public class Manager {
     private Monde monde;
     private Niveau niveauEnCours;

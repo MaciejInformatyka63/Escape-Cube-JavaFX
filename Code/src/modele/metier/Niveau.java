@@ -3,6 +3,10 @@ package modele.metier;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Classe contenant tous les éléments d'un niveau, soient les murs, les boutons, le carré du joueur et la sortie
+ */
 public class Niveau {
     private List<Mur> lesMurs;
     private List<Bouton> lesBoutons;

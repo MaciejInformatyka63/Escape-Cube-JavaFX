@@ -5,6 +5,9 @@ import modele.metier.Mur;
 import modele.metier.Niveau;
 import modele.metier.Positions;
 
+/**
+ * Classe permettant de gérer les collisions entre un élément et les murs dans un niveau
+ */
 public class CollisionneurMur implements Collisionneur {
 
     /*

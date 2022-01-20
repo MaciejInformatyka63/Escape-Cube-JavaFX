@@ -7,6 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import view.gestion.ManagerVue;
 
+/**
+ * Classe représentant le Code Behind de la fenêtre de lancement du jeu
+ */
 public class FenetreStart {
 
     @FXML

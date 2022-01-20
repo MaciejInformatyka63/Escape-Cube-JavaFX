@@ -2,6 +2,9 @@ package data;
 
 import modele.metier.*;
 
+/**
+ * Classe chargeant un monde par défaut
+ */
 public class Stub implements Chargeur{
     /**
      * Charge un monde par défaut pour pouvoir jouer au jeu

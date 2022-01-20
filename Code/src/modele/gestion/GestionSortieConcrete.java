@@ -5,6 +5,9 @@ import modele.metier.Element;
 import modele.metier.Niveau;
 import modele.metier.Sortie;
 
+/**
+ * Classe gérant l'ouverture d'une sortie ainsi que le passage d'un élément dans cette dernière
+ */
 public class GestionSortieConcrete implements GestionSortie{
 
     /**

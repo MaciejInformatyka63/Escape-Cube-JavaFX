@@ -1,5 +1,8 @@
 package modele.metier;
 
+/**
+ * Classe représentant le carré controllé par le joueur
+ */
 public class CarreJoueur extends Element {
 
     /**

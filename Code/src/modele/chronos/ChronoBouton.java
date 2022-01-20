@@ -6,6 +6,9 @@ import modele.gestion.ObsTempsBouton;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe permettant de gérer le temps pendant lequel un bouton reste appuyé
+ */
 public abstract class ChronoBouton implements Chrono{
 
     /**

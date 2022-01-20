@@ -2,6 +2,9 @@ package modele.gestion;
 
 import view.gestion.ManagerVue;
 
+/**
+ * Classe permettant de déplacer un CarréJoueur dans un niveau
+ */
 public class DeplaceurCarre extends Deplaceur{
 
     /**

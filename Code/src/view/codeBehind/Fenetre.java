@@ -12,7 +12,9 @@ import modele.metier.Niveau;
 import modele.metier.Sortie;
 import view.gestion.ManagerVue;
 
-
+/**
+ * Classe réprésentant le Code Behind de la fenêtre de jeu
+ */
 public class Fenetre {
 
     @FXML

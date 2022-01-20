@@ -5,6 +5,9 @@ import modele.gestion.Deplaceur;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * Classe Concrétisant le fait de rafraîchir les objets à l'écran, et ce, à 60FPS
+ */
 public class ChronoRefreshConcret extends ChronoRefresh{
 
     /**

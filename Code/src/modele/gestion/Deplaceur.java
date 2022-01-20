@@ -4,6 +4,9 @@ import modele.chronos.ChronoRefresh;
 import modele.metier.Element;
 import modele.metier.Positions;
 
+/**
+ * Classe permettant de déplacer un élément dans un Niveau
+ */
 public abstract class Deplaceur {
 
     protected Element e;
