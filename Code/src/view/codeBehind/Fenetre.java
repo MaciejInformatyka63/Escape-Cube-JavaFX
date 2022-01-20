@@ -6,7 +6,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import launch.Launcher;
 import modele.metier.Bouton;
 import modele.metier.Mur;
 import modele.metier.Niveau;
@@ -15,9 +14,7 @@ import view.gestion.ManagerVue;
 
 
 public class Fenetre {
-    //privé sauf initialize
-    @FXML
-    private Rectangle mur;
+
     @FXML
     private Pane pane;
 

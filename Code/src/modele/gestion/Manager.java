@@ -95,7 +95,6 @@ public class Manager {
             } else if (e.equals(toucheAppuiBouton)) {
                 Bouton b = cb.surBouton(niveauEnCours.getCarreJoueur(),niveauEnCours);
                 if (b!=null){
-                    System.out.println("test");
                     b.setAppuye(!b.isAppuye());
                     gsc.ouvrirSortie(niveauEnCours);
 
