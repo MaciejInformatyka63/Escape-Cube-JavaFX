@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import launch.Launcher;
 import modele.gestion.Manager;
 import view.gestion.ManagerVue;
 
@@ -37,7 +36,8 @@ public class FenetreStart {
         return new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Stage stage = ManagerVue.getStage();
+                ManagerVue.getM().startNiveau();
+                /*Stage stage = ManagerVue.getStage();
                 Parent r = null;
                 try {
                     r = FXMLLoader.load(getClass().getResource("/FXML/Fenetre.fxml"));
@@ -47,7 +47,7 @@ public class FenetreStart {
                 Scene s = new Scene(r);
                 stage.setScene(s);
                 stage.setTitle("Niveau "+ ManagerVue.getM().getIndiceNiveauEnCours());
-                stage.show();
+                stage.show();*/
             }
         };
     }

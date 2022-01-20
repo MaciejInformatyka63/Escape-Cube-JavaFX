@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modele.gestion.Manager;
 
+import java.io.IOException;
+
 
 public class ManagerVue {
     private static Stage stage;
@@ -30,7 +32,6 @@ public class ManagerVue {
     }
 
     public static void chargerFin(){
-        Object o = new Object();
         try {
             Parent r = FXMLLoader.load(m.getClass().getResource("/FXML/FenetreFin.fxml"));
             Scene s = new Scene(r);
@@ -45,5 +46,19 @@ public class ManagerVue {
 
     public static void quitterJeu(){
         stage.close();
+    }
+
+    public static void lancerNiveau() {
+        Parent r;
+        try {
+             r = FXMLLoader.load(m.getClass().getResource("/FXML/Fenetre.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        Scene s = new Scene(r);
+        stage.setScene(s);
+        stage.setTitle("Niveau "+ ManagerVue.getM().getIndiceNiveauEnCours());
+        stage.show();
     }
 }

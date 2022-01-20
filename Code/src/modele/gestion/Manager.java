@@ -62,14 +62,15 @@ public class Manager {
         lesCollisionneurs.add(cb);
         indiceNiveauEnCours =0;
         niveauEnCours = m.getLesNiveaux().get(indiceNiveauEnCours);
-        startNiveau(niveauEnCours);
+        //startNiveau(niveauEnCours);
     }
 
     public Niveau getNiveauEnCours() {
         return niveauEnCours;
     }
 
-    public void startNiveau(Niveau n){
+    public void startNiveau(){
+        ManagerVue.lancerNiveau();
     }
 
     public int getIndiceNiveauEnCours() {
@@ -109,7 +110,8 @@ public class Manager {
         if(gsc.sortieElem(niveauEnCours, niveauEnCours.getCarreJoueur(), d/*A remplacer par la direction correspondant à la touche*/)) {
             indiceNiveauEnCours=indiceNiveauEnCours+1;
             if(indiceNiveauEnCours<monde.getLesNiveaux().size()) {
-                startNiveau(monde.getLesNiveaux().get(indiceNiveauEnCours));
+                niveauEnCours=monde.getLesNiveaux().get(indiceNiveauEnCours);
+                startNiveau();
             }
             else {
                 finJeu();
